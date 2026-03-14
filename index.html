@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Barbería | St. Charles, MO</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--cream:#F5EFE0;--cream2:#EDE4CF;--red:#C0392B;--red2:#E74C3C;--dark:#1A1209;--dark2:#2C1F0E;--brown:#6B4C2A;--text:#1A1209;--border:rgba(107,76,42,0.2)}
+html{scroll-behavior:smooth}
+body{cursor:none;background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 3rem;height:70px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,239,224,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;font-weight:700;color:var(--dark)}
+.logo span{color:var(--red)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:var(--brown);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--red)}
+.nav-cta{background:var(--red);color:#fff;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;padding:10px 24px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;transition:background .2s;text-decoration:none}
+.nav-cta:hover{background:var(--red2)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding-top:70px;overflow:hidden}
+.hero-left{background:var(--dark);display:flex;flex-direction:column;justify-content:center;padding:6rem 4rem;position:relative;overflow:hidden}
+.hero-left::before{content:'BARBER';position:absolute;bottom:-2rem;left:-1rem;font-family:'Playfair Display',serif;font-size:12rem;font-weight:900;color:rgba(255,255,255,0.03);white-space:nowrap;pointer-events:none;line-height:1}
+.hero-tag{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--red2);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px}
+.hero-tag::before{content:'';width:30px;height:1px;background:var(--red2)}
+.hero-left h1{font-family:'Playfair Display',serif;font-size:clamp(3.5rem,7vw,7rem);line-height:.95;font-weight:900;color:#fff;margin-bottom:1.5rem}
+.hero-left h1 em{color:var(--red2);font-style:italic;display:block}
+.hero-left p{font-size:.95rem;color:rgba(255,255,255,0.55);line-height:1.9;max-width:380px;margin-bottom:3rem;font-weight:300}
+.hero-cta-group{display:flex;gap:1rem}
+.btn-red{background:var(--red);color:#fff;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;padding:14px 32px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:500;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-red:hover{background:var(--red2)}
+.btn-outline-white{background:transparent;color:#fff;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;padding:13px 32px;border:1px solid rgba(255,255,255,0.2);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-outline-white:hover{border-color:#fff}
+.hero-right{background:var(--cream2);display:flex;flex-direction:column;justify-content:flex-end;padding:6rem 4rem;gap:1.5rem;position:relative}
+.hero-right::before{content:'327';position:absolute;top:3rem;right:3rem;font-family:'Playfair Display',serif;font-size:8rem;font-weight:900;color:rgba(107,76,42,0.08);line-height:1}
+.stat-card{background:#fff;padding:2rem;border-left:3px solid var(--red)}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:var(--dark);line-height:1;margin-bottom:.3rem}
+.stat-num span{color:var(--red)}
+.stat-label{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--brown)}
+.marquee{background:var(--red);padding:.8rem 0;overflow:hidden}
+.marquee-track{display:flex;animation:scroll 18s linear infinite;white-space:nowrap}
+.marquee-item{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;color:#fff;padding:0 2.5rem;display:flex;align-items:center;gap:2.5rem}
+.marquee-item::after{content:'✦';font-style:normal;font-size:.6rem;opacity:.7}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.section{padding:7rem 4rem;max-width:1200px;margin:0 auto}
+.eyebrow{font-size:.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:1rem;font-weight:500}
+.title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:900;line-height:1;margin-bottom:1.5rem}
+.title em{font-style:italic;color:var(--red)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
+.svc-card{background:#fff;padding:3rem 2.5rem;border:1px solid var(--border);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(26,18,9,0.1)}
+.svc-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc-card:hover::after{transform:scaleX(1)}
+.svc-price{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:var(--red);margin-bottom:.3rem}
+.svc-name{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;margin-bottom:.8rem;color:var(--dark)}
+.svc-desc{font-size:.85rem;color:var(--brown);line-height:1.7;font-weight:300}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;margin-top:4rem}
+.about-visual{background:var(--dark);padding:4rem;position:relative}
+.about-visual-inner{border:1px solid rgba(255,255,255,0.1);padding:3rem;text-align:center}
+.about-big{font-family:'Playfair Display',serif;font-size:6rem;font-weight:900;color:var(--red2);line-height:1}
+.about-big-sub{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:.5rem}
+.about-features{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.feat{display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(255,255,255,0.05);border-left:2px solid var(--red)}
+.feat-dot{width:8px;height:8px;background:var(--red2);border-radius:50%;flex-shrink:0}
+.feat-text{font-size:.85rem;color:rgba(255,255,255,0.7);font-weight:300}
+.reviews-section{background:var(--dark);padding:7rem 4rem}
+.reviews-inner{max-width:1200px;margin:0 auto}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
+.rev-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:2.5rem;transition:background .3s}
+.rev-card:hover{background:rgba(255,255,255,0.07)}
+.rev-stars{color:var(--red2);font-size:.9rem;letter-spacing:2px;margin-bottom:1rem}
+.rev-text{font-size:.88rem;color:rgba(255,255,255,0.6);line-height:1.9;font-style:italic;margin-bottom:1.5rem;font-weight:300}
+.rev-author{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--red2)}
+.hours-section{padding:7rem 4rem;background:var(--cream2)}
+.hours-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.hours-list{margin-top:2.5rem}
+.hour-row{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid var(--border)}
+.hour-day{font-size:.82rem;letter-spacing:1px;text-transform:uppercase;color:var(--brown)}
+.hour-time{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:700;color:var(--dark)}
+.cta-section{background:var(--red);padding:8rem 4rem;text-align:center}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,7rem);font-weight:900;font-style:italic;color:#fff;line-height:.95;margin-bottom:1.5rem}
+.cta-section p{font-size:1rem;color:rgba(255,255,255,0.8);max-width:450px;margin:0 auto 3rem;line-height:1.9;font-weight:300}
+.cta-phone{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:900;color:#fff;display:block;margin-bottom:2rem;text-decoration:none}
+.btn-white{background:#fff;color:var(--red);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;padding:16px 48px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;transition:all .2s;display:inline-block;text-decoration:none}
+.btn-white:hover{background:var(--cream)}
+footer{background:var(--dark);padding:2.5rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;font-style:italic;color:#fff}
+.footer-logo span{color:var(--red2)}
+.footer-copy{font-size:.72rem;letter-spacing:1px;color:rgba(255,255,255,0.4)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.fi{opacity:0;animation:fadeUp .7s ease forwards}
+.d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}.hero-right{display:none}
+  .nav-links{display:none}.section,.hours-section,.reviews-section,.cta-section{padding:5rem 1.5rem}
+  .services-grid,.about-grid,.hours-inner,.reviews-grid{grid-template-columns:1fr}
+}
+.cur{color:var(--red);position:fixed;width:8px;height:8px;background:currentColor;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s}.cur-ring{position:fixed;width:32px;height:32px;border:1.5px solid currentColor;border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .15s ease;opacity:.5}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:10000;align-items:center;justify-content:center}.modal-overlay.active{display:flex}.modal-box{background:#fff;max-width:400px;width:90%;padding:2.5rem;text-align:center;position:relative;animation:popIn .25s ease}.modal-box h3{font-size:1.2rem;color:#1a1a1a;margin-bottom:.5rem;font-weight:700}.modal-box p{font-size:.85rem;color:#666;line-height:1.6;margin-bottom:1.5rem}.modal-phone{font-size:1.8rem;font-weight:900;color:#C0392B;display:block;margin-bottom:1rem;text-decoration:none}.modal-addr{font-size:.82rem;color:#888;margin-bottom:1.5rem}.modal-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}.modal-btn-call{background:#C0392B;color:#fff;padding:12px 28px;border:none;cursor:pointer;font-weight:700;font-size:.82rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;display:inline-block}.modal-btn-map{background:transparent;color:#C0392B;padding:11px 28px;border:1.5px solid #C0392B;cursor:pointer;font-weight:700;font-size:.82rem;letter-spacing:1px;text-transform:uppercase;text-decoration:none;display:inline-block}.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#999;line-height:1}@keyframes popIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">La <span>Barbería</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#hours">Hours</a></li>
+  </ul>
+  <a href="tel:3142990816" class="nav-cta" onclick="if(window.innerWidth>768){event.preventDefault();openBookModal()}">Book Now</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hero-tag fi d1">St. Charles, MO · 5.0 Stars</div>
+    <h1 class="fi d2">The Art<em>of the Cut.</em></h1>
+    <p class="fi d3">Expert grooming for kids, teens, and gents in a welcoming environment. St. Charles's top-rated barbershop — walk-ins welcome.</p>
+    <div class="hero-cta-group fi d3">
+      <a href="tel:3142990816" class="btn-red" onclick="if(window.innerWidth>768){event.preventDefault();openBookModal()}">Call to Book</a>
+      <a href="#services" class="btn-outline-white">Our Services</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-card fi d2">
+      <div class="stat-num">5.0<span>★</span></div>
+      <div class="stat-label">Perfect Google Rating</div>
+    </div>
+    <div class="stat-card fi d3">
+      <div class="stat-num">66<span>+</span></div>
+      <div class="stat-label">Happy Customers</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">7<span>days</span></div>
+      <div class="stat-label">Open Every Day</div>
+    </div>
+  </div>
+</div>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <div class="marquee-item">Haircuts</div><div class="marquee-item">Fades</div>
+    <div class="marquee-item">Kids Cuts</div><div class="marquee-item">Beard Trims</div>
+    <div class="marquee-item">Line-Ups</div><div class="marquee-item">All Ages</div>
+    <div class="marquee-item">Walk-Ins Welcome</div><div class="marquee-item">Haircuts</div>
+    <div class="marquee-item">Fades</div><div class="marquee-item">Kids Cuts</div>
+    <div class="marquee-item">Beard Trims</div><div class="marquee-item">Line-Ups</div>
+    <div class="marquee-item">All Ages</div><div class="marquee-item">Walk-Ins Welcome</div>
+  </div>
+</div>
+
+<section class="section" id="services">
+  <div class="eyebrow">What We Offer</div>
+  <h2 class="title">Our <em>Services</em></h2>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-price">$25<span style="font-size:1rem;color:var(--brown)">+</span></div>
+      <div class="svc-name">Classic Haircut</div>
+      <div class="svc-desc">Precision cuts tailored to your style. We listen, we execute, you leave looking sharp every single time.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-price">$20<span style="font-size:1rem;color:var(--brown)">+</span></div>
+      <div class="svc-name">Kids' Cuts</div>
+      <div class="svc-desc">Patient, fun service for kids of all ages. We make it comfortable and enjoyable — even for the squirmy ones.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-price">$15<span style="font-size:1rem;color:var(--brown)">+</span></div>
+      <div class="svc-name">Beard Trim</div>
+      <div class="svc-desc">Shape, define, and clean up your beard with expert precision. Straight razor finish available.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-price">$30<span style="font-size:1rem;color:var(--brown)">+</span></div>
+      <div class="svc-name">Fade & Taper</div>
+      <div class="svc-desc">Clean fades from skin to any length. Mid fades, high fades, tapers — we do them all with precision.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-price">$10<span style="font-size:1rem;color:var(--brown)">+</span></div>
+      <div class="svc-name">Line-Up</div>
+      <div class="svc-desc">Sharp edges, clean lines. The perfect finishing touch to keep your style looking fresh between cuts.</div>
+    </div>
+    <div class="svc-card">
+      <div class="svc-price">$40<span style="font-size:1rem;color:var(--brown)">+</span></div>
+      <div class="svc-name">Cut & Beard Combo</div>
+      <div class="svc-desc">The full treatment. Haircut and beard trim together — walk out looking completely transformed.</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--cream2);padding:7rem 4rem">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-visual-inner">
+          <div class="about-big">5★</div>
+          <div class="about-big-sub">Google Rating · 66 Reviews</div>
+        </div>
+        <div class="about-features">
+          <div class="feat"><div class="feat-dot"></div><div class="feat-text">Walk-ins always welcome</div></div>
+          <div class="feat"><div class="feat-dot"></div><div class="feat-text">Open 7 days a week</div></div>
+          <div class="feat"><div class="feat-dot"></div><div class="feat-text">Bilingual service available</div></div>
+          <div class="feat"><div class="feat-dot"></div><div class="feat-text">All hair types & styles</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">About Us</div>
+        <h2 class="title">More Than<em>a Haircut.</em></h2>
+        <p style="font-size:.95rem;color:var(--brown);line-height:1.9;font-weight:300;margin-bottom:1.5rem">At La Barbería, every client walks in as a customer and leaves as family. Our experienced barbers take the time to understand exactly what you want — then deliver it every time.</p>
+        <p style="font-size:.95rem;color:var(--brown);line-height:1.9;font-weight:300">Located in the heart of St. Charles, we serve the whole family — from first haircuts to weekly touch-ups. Walk-ins always welcome, or call ahead to reserve your spot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="reviews-section" id="reviews">
+  <div class="reviews-inner">
+    <div class="eyebrow" style="color:var(--red2)">What Clients Say</div>
+    <h2 class="title" style="color:#fff">Real <em>Reviews</em></h2>
+    <div class="reviews-grid">
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Excellent service and attention to detail! My stylist took the time to understand exactly what I wanted, and the results were perfect. Definitely one of the best salons in the area."</p><div class="rev-author">— Google Review</div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"I've been a faithful client for years. Maria is absolutely amazing and does an amazing job every time. I've brought my kids and the barbers are always super friendly."</p><div class="rev-author">— Google Review</div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Bryan did a mid fade on my youngest son and he loved it. Very kind and professional. We will be coming back for sure — best barbershop in St. Charles."</p><div class="rev-author">— Google Review</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="hours-section" id="hours">
+  <div class="hours-inner">
+    <div>
+      <div class="eyebrow">Find Us</div>
+      <h2 class="title">Hours &amp; <em>Location</em></h2>
+      <div class="hours-list">
+        <div class="hour-row"><span class="hour-day">Monday – Friday</span><span class="hour-time">10:00 AM – 8:00 PM</span></div>
+        <div class="hour-row"><span class="hour-day">Saturday</span><span class="hour-time">10:00 AM – 8:00 PM</span></div>
+        <div class="hour-row"><span class="hour-day">Sunday</span><span class="hour-time">10:00 AM – 4:00 PM</span></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:1.5rem;padding-top:5rem">
+      <div style="background:#fff;padding:2rem;border-left:3px solid var(--red)">
+        <div class="eyebrow">Address</div>
+        <p style="font-size:1.1rem;font-family:'Playfair Display',serif;font-weight:700;margin-top:.5rem">327 Droste Rd<br>St. Charles, MO 63301</p>
+      </div>
+      <div style="background:#fff;padding:2rem;border-left:3px solid var(--red)">
+        <div class="eyebrow">Phone</div>
+        <p style="font-size:1.1rem;font-family:'Playfair Display',serif;font-weight:700;margin-top:.5rem">(314) 299-0816</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Ready to Look<br>Your Best?</h2>
+  <p>Walk in or call ahead. La Barbería is open 7 days a week — we'll make sure you leave looking and feeling great.</p>
+  <a href="tel:3142990816" class="cta-phone">(314) 299-0816</a>
+  <a href="tel:3142990816" class="btn-white" onclick="if(!confirm('Call La Barbería at (314) 299-0816?')) event.preventDefault()">Book Your Visit</a>
+</div>
+
+<footer>
+  <div class="footer-logo">La <span>Barbería</span> · St. Charles, MO</div>
+  <div class="footer-copy">© 2026 La Barbería · 327 Droste Rd, St. Charles, MO 63301</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting){i.target.style.opacity='1';i.target.style.transform='translateY(0)'}})},{threshold:0.1});
+document.querySelectorAll('.svc-card,.rev-card,.stat-card,.hour-row,.feat').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(16px)';el.style.transition='opacity .5s ease,transform .5s ease';obs.observe(el)});
+</script>
+<div class="cur" id="cur" style="background:#C0392B"></div><div class="cur-ring" id="curR" style="border-color:#C0392B"></div>
+<script>
+const C=document.getElementById("cur"),R=document.getElementById("curR");
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY;C.style.left=mx+"px";C.style.top=my+"px"});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;R.style.left=rx+"px";R.style.top=ry+"px";requestAnimationFrame(loop)})();
+document.querySelectorAll("a,button,.svc,.svc-card,.rev,.service-card,.trust-card,.stat").forEach(el=>{el.addEventListener("mouseenter",()=>{R.style.transform="translate(-50%,-50%) scale(2.2)";R.style.opacity="0.9"});el.addEventListener("mouseleave",()=>{R.style.transform="translate(-50%,-50%) scale(1)";R.style.opacity="0.5"})});
+</script>
+<div class="modal-overlay" id="bookModal"><div class="modal-box"><button class="modal-close" onclick="closeModal()"></body>times;</button><h3>La Barbería</h3><p>Ready to book? Give us a call or find us on the map.</p><a href="tel:3142990816" class="modal-phone">(314) 299-0816</a><div class="modal-addr">327 Droste Rd, St. Charles, MO 63301</div><div class="modal-btns"><a href="tel:3142990816" class="modal-btn-call">Call Now</a><a href="https://maps.google.com/?q=327+Droste+Rd+St+Charles+MO" target="_blank" class="modal-btn-map">Get Directions</a></div></div></div><script>function openBookModal(){document.getElementById('bookModal').classList.add('active')}function closeModal(){document.getElementById('bookModal').classList.remove('active')}document.getElementById('bookModal').addEventListener('click',function(e){if(e.target===this)closeModal()});</script>
+</body>
+</html>
