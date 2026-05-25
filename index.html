@@ -216,10 +216,10 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
   <div class="logo">La <span>Barbería</span></div>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#portfolio">Work</a></li>
-      <li><a href="#process">Visit</a></li>
-      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#services" data-i18n="navsvc">Services</a></li>
+      <li><a href="#portfolio" data-i18n="navwork">Work</a></li>
+      <li><a href="#process" data-i18n="navvisit">Visit</a></li>
+      <li><a href="#reviews" data-i18n="navrev">Reviews</a></li>
     </ul>
     <div class="lang-toggle" id="langToggle">
       <button data-lang="en" class="active">EN</button>
@@ -251,7 +251,7 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
       <div class="hero-stats">
         <div class="hero-stat"><div class="hs-num">66+</div><div class="hs-label" data-i18n="stat1">Happy Customers</div></div>
         <div class="hero-stat"><div class="hs-num">7</div><div class="hs-label" data-i18n="stat2">Days a Week</div></div>
-        <div class="hero-stat"><div class="hs-num">$10+</div><div class="hs-label" data-i18n="stat3">Starting Price</div></div>
+        <div class="hero-stat"><div class="hs-num" data-i18n="stat3num">$10+</div><div class="hs-label" data-i18n="stat3">Starting Price</div></div>
       </div>
     </div>
   </div>
@@ -269,12 +269,12 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
   <div class="eyebrow" data-i18n="eyebsvc">What We Offer</div>
   <h2 class="title" data-split data-i18n="titlesvc">Our <em>Services</em></h2>
   <div class="services-grid">
-    <div class="svc-card"><div class="svc-price">$25<span>+</span></div><div class="svc-name">Classic Haircut</div><div class="svc-desc">Precision cuts tailored to your style. We listen, we execute, you leave looking sharp every single time.</div></div>
-    <div class="svc-card"><div class="svc-price">$20<span>+</span></div><div class="svc-name">Kids' Cuts</div><div class="svc-desc">Patient, fun service for kids of all ages. We make it comfortable and enjoyable — even for the squirmy ones.</div></div>
-    <div class="svc-card"><div class="svc-price">$15<span>+</span></div><div class="svc-name">Beard Trim</div><div class="svc-desc">Shape, define, and clean up your beard with expert precision. Straight razor finish available.</div></div>
-    <div class="svc-card"><div class="svc-price">$30<span>+</span></div><div class="svc-name">Fade & Taper</div><div class="svc-desc">Clean fades from skin to any length. Mid fades, high fades, tapers — we do them all with precision.</div></div>
-    <div class="svc-card"><div class="svc-price">$10<span>+</span></div><div class="svc-name">Line-Up</div><div class="svc-desc">Sharp edges, clean lines. The perfect finishing touch to keep your style looking fresh between cuts.</div></div>
-    <div class="svc-card"><div class="svc-price">$40<span>+</span></div><div class="svc-name">Cut & Beard Combo</div><div class="svc-desc">The full treatment. Haircut and beard trim together — walk out looking completely transformed.</div></div>
+    <div class="svc-card"><div class="svc-price">$25<span>+</span></div><div class="svc-name" data-i18n="svc1n">Classic Haircut</div><div class="svc-desc" data-i18n="svc1d">Precision cuts tailored to your style. We listen, we execute, you leave looking sharp every single time.</div></div>
+    <div class="svc-card"><div class="svc-price">$20<span>+</span></div><div class="svc-name" data-i18n="svc2n">Kids' Cuts</div><div class="svc-desc" data-i18n="svc2d">Patient, fun service for kids of all ages. We make it comfortable and enjoyable — even for the squirmy ones.</div></div>
+    <div class="svc-card"><div class="svc-price">$15<span>+</span></div><div class="svc-name" data-i18n="svc3n">Beard Trim</div><div class="svc-desc" data-i18n="svc3d">Shape, define, and clean up your beard with expert precision. Straight razor finish available.</div></div>
+    <div class="svc-card"><div class="svc-price">$30<span>+</span></div><div class="svc-name" data-i18n="svc4n">Fade & Taper</div><div class="svc-desc" data-i18n="svc4d">Clean fades from skin to any length. Mid fades, high fades, tapers — we do them all with precision.</div></div>
+    <div class="svc-card"><div class="svc-price">$10<span>+</span></div><div class="svc-name" data-i18n="svc5n">Line-Up</div><div class="svc-desc" data-i18n="svc5d">Sharp edges, clean lines. The perfect finishing touch to keep your style looking fresh between cuts.</div></div>
+    <div class="svc-card"><div class="svc-price">$40<span>+</span></div><div class="svc-name" data-i18n="svc6n">Cut & Beard Combo</div><div class="svc-desc" data-i18n="svc6d">The full treatment. Haircut and beard trim together — walk out looking completely transformed.</div></div>
   </div>
 </section>
 
@@ -282,10 +282,10 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 <section class="portfolio-section" id="portfolio">
   <div class="portfolio-intro">
     <div>
-      <div class="eyebrow">Recent Work</div>
-      <h2 class="title" data-split>El <em>Portfolio.</em></h2>
+      <div class="eyebrow" data-i18n="eyebpf">Recent Work</div>
+      <h2 class="title" data-split data-i18n="titlepf">El <em>Portfolio.</em></h2>
     </div>
-    <p>Cada corte cuenta una historia — every cut tells a story. Scroll to flip through recent visits from our regulars.</p>
+    <p data-i18n="pfsub">Cada corte cuenta una historia — every cut tells a story. Scroll to flip through recent visits from our regulars.</p>
   </div>
   <div class="portfolio-stage">
     <div class="pstack" id="pstack">
@@ -303,13 +303,13 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 <!-- PROCESS: vertical timeline -->
 <section class="process-section" id="process">
   <div class="process-inner">
-    <div class="eyebrow">How a Visit Works · Cómo Funciona</div>
-    <h2 class="title" data-split>El <em>Proceso.</em></h2>
+    <div class="eyebrow" data-i18n="eyebproc">How a Visit Works · Cómo Funciona</div>
+    <h2 class="title" data-split data-i18n="titleproc">El <em>Proceso.</em></h2>
     <div class="vtl">
-      <div class="vtl-step" data-n="01"><div class="vtl-title">Walk In or<em>Call Ahead.</em></div><div class="vtl-desc">No appointment needed. Just stop by at <strong>327 Droste Rd</strong> during open hours — or call <strong>(314) 299-0816</strong> to lock in a time. We speak English and Spanish.</div></div>
-      <div class="vtl-step" data-n="02"><div class="vtl-title">Tell Us<em>What You Want.</em></div><div class="vtl-desc">Bring a reference photo, describe it, or say "the usual." Maria or Bryan will confirm what you want before any clippers touch your head. Honest opinions if asked.</div></div>
-      <div class="vtl-step" data-n="03"><div class="vtl-title">Sit, Relax,<em>Get Sharp.</em></div><div class="vtl-desc">Real chair, real conversation. Cuts take 25-40 minutes done properly. Straight razor finish on every fade. Music or sports on the TV.</div></div>
-      <div class="vtl-step" data-n="04"><div class="vtl-title">Walk Out<em>Looking Fresh.</em></div><div class="vtl-desc">Hot towel finish, clean lines, looking sharp. Tip what feels right. We'll remember your style for next time — that's the difference.</div></div>
+      <div class="vtl-step" data-n="01"><div class="vtl-title" data-i18n="step1t">Walk In or<em>Call Ahead.</em></div><div class="vtl-desc" data-i18n="step1d">No appointment needed. Just stop by at <strong>327 Droste Rd</strong> during open hours — or call <strong>(314) 299-0816</strong> to lock in a time. We speak English and Spanish.</div></div>
+      <div class="vtl-step" data-n="02"><div class="vtl-title" data-i18n="step2t">Tell Us<em>What You Want.</em></div><div class="vtl-desc" data-i18n="step2d">Bring a reference photo, describe it, or say "the usual." Maria or Bryan will confirm what you want before any clippers touch your head. Honest opinions if asked.</div></div>
+      <div class="vtl-step" data-n="03"><div class="vtl-title" data-i18n="step3t">Sit, Relax,<em>Get Sharp.</em></div><div class="vtl-desc" data-i18n="step3d">Real chair, real conversation. Cuts take 25-40 minutes done properly. Straight razor finish on every fade. Music or sports on the TV.</div></div>
+      <div class="vtl-step" data-n="04"><div class="vtl-title" data-i18n="step4t">Walk Out<em>Looking Fresh.</em></div><div class="vtl-desc" data-i18n="step4d">Hot towel finish, clean lines, looking sharp. Tip what feels right. We'll remember your style for next time — that's the difference.</div></div>
     </div>
   </div>
 </section>
@@ -317,8 +317,8 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 <!-- REVIEWS -->
 <div class="reviews-section" id="reviews">
   <div class="reviews-inner">
-    <div class="eyebrow" style="color:var(--red2)">What Clients Say</div>
-    <h2 class="title" style="color:#fff" data-split>Real <em>Reviews.</em></h2>
+    <div class="eyebrow" style="color:var(--red2)" data-i18n="eyebrev">What Clients Say</div>
+    <h2 class="title" style="color:#fff" data-split data-i18n="titlerev">Real <em>Reviews.</em></h2>
     <div class="reviews-grid">
       <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Excellent service and attention to detail! My stylist took the time to understand exactly what I wanted, and the results were perfect. Definitely one of the best salons in the area."</p><div class="rev-author">— Google Review</div></div>
       <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"I've been a faithful client for years. Maria is absolutely amazing and does an amazing job every time. I've brought my kids and the barbers are always super friendly."</p><div class="rev-author">— Google Review</div></div>
@@ -331,21 +331,21 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 <div class="hours-section" id="hours">
   <div class="hours-inner">
     <div>
-      <div class="eyebrow">Find Us</div>
-      <h2 class="title" data-split>Hours &amp; <em>Location.</em></h2>
+      <div class="eyebrow" data-i18n="eyebfind">Find Us</div>
+      <h2 class="title" data-split data-i18n="titlefind">Hours &amp; <em>Location.</em></h2>
       <div class="hours-list">
-        <div class="hour-row"><span class="hour-day">Monday – Friday</span><span class="hour-time">10:00 AM – 8:00 PM</span></div>
-        <div class="hour-row"><span class="hour-day">Saturday</span><span class="hour-time">10:00 AM – 8:00 PM</span></div>
-        <div class="hour-row"><span class="hour-day">Sunday</span><span class="hour-time">10:00 AM – 4:00 PM</span></div>
+        <div class="hour-row"><span class="hour-day" data-i18n="day1">Monday – Friday</span><span class="hour-time">10:00 AM – 8:00 PM</span></div>
+        <div class="hour-row"><span class="hour-day" data-i18n="day2">Saturday</span><span class="hour-time">10:00 AM – 8:00 PM</span></div>
+        <div class="hour-row"><span class="hour-day" data-i18n="day3">Sunday</span><span class="hour-time">10:00 AM – 4:00 PM</span></div>
       </div>
     </div>
     <div style="padding-top:5rem">
       <div class="addr-card">
-        <div class="eyebrow">Address</div>
+        <div class="eyebrow" data-i18n="eyebaddr">Address</div>
         <p>327 Droste Rd<br>St. Charles, MO 63301</p>
       </div>
       <div class="addr-card">
-        <div class="eyebrow">Phone · Bilingual</div>
+        <div class="eyebrow" data-i18n="eyebphone">Phone · Bilingual</div>
         <p>(314) 299-0816</p>
       </div>
     </div>
@@ -356,10 +356,10 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 <div class="booking-section" id="booking">
   <div class="booking-inner">
     <div class="booking-side">
-      <div class="eyebrow">Book Online</div>
-      <h2 class="title" data-split>Reserve Your <em>Chair.</em></h2>
-      <p>Tell us what you need and when. We'll call to confirm. Prefer to talk? <a href="tel:3142990816">(314) 299-0816</a> rings straight through. Hablamos español.</p>
-      <p style="font-size:.82rem;color:var(--red);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:0">✦ Open 7 Days · Walk-Ins Welcome</p>
+      <div class="eyebrow" data-i18n="eyebbook">Book Online</div>
+      <h2 class="title" data-split data-i18n="titlebook">Reserve Your <em>Chair.</em></h2>
+      <p data-i18n="bookp">Tell us what you need and when. We'll call to confirm. Prefer to talk? <a href="tel:3142990816">(314) 299-0816</a> rings straight through. Hablamos español.</p>
+      <p data-i18n="bookbadge" style="font-size:.82rem;color:var(--red);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:0">✦ Open 7 Days · Walk-Ins Welcome</p>
     </div>
     <div>
       <form id="bookingForm" name="booking" data-netlify="true" data-netlify-honeypot="bot-field">
@@ -378,7 +378,7 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
           <div class="form-group"><label for="bLang">Preferred Language</label><select id="bLang" name="language"><option>English</option><option>Español</option><option>Either is fine</option></select></div>
         </div>
         <div class="form-group"><label for="bNotes">Notes</label><textarea id="bNotes" name="notes" rows="3" placeholder="Anything we should know..."></textarea></div>
-        <button type="submit" class="btn-red magnetic" style="width:100%;padding:16px;font-size:.85rem;letter-spacing:2px"><span class="magnetic-inner">Send Request</span></button>
+        <button type="submit" class="btn-red magnetic" style="width:100%;padding:16px;font-size:.85rem;letter-spacing:2px"><span class="magnetic-inner" data-i18n="formsend">Send Request</span></button>
       </form>
       <div id="bookingSuccess" class="booking-success" style="display:none">
         <div class="eyebrow">¡Listo!</div>
@@ -391,10 +391,10 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 
 <!-- CTA -->
 <div class="cta-section">
-  <h2>Ready to Look<br>Your Best?</h2>
-  <p>Walk in or call ahead. La Barbería is open 7 days a week — we'll make sure you leave looking and feeling great.</p>
+  <h2 data-i18n="ctah">Ready to Look<br>Your Best?</h2>
+  <p data-i18n="ctap">Walk in or call ahead. La Barbería is open 7 days a week — we'll make sure you leave looking and feeling great.</p>
   <a href="tel:3142990816" class="cta-phone">(314) 299-0816</a>
-  <a href="tel:3142990816" class="btn-white magnetic" onclick="if(window.innerWidth>768){event.preventDefault();openBookModal()}"><span class="magnetic-inner">Book Your Visit</span></a>
+  <a href="tel:3142990816" class="btn-white magnetic" onclick="if(window.innerWidth>768){event.preventDefault();openBookModal()}"><span class="magnetic-inner" data-i18n="ctabtn">Book Your Visit</span></a>
 </div>
 
 <footer>
@@ -658,32 +658,98 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 (function(){
   var i18n={
     en:{
-      book:'Book Now',
+      // Nav
+      navsvc:'Services',navwork:'Work',navvisit:'Visit',navrev:'Reviews',book:'Book Now',
+      // Hero
       herotag:'St. Charles, MO · 5.0 Stars · 66 Reviews',
       ratinglabel:'Perfect Google Rating',
       claim:'The Art <em>of the Cut.</em>',
       sub:'Expert grooming for kids, teens, and gentlemen in a welcoming bilingual environment. St. Charles\'s top-rated barbershop — walk-ins always welcome.',
-      cta1:'Call to Book',
-      cta2:'View Services',
-      stat1:'Happy Customers',
-      stat2:'Days a Week',
-      stat3:'Starting Price',
-      eyebsvc:'What We Offer',
-      titlesvc:'Our <em>Services</em>'
+      cta1:'Call to Book',cta2:'View Services',
+      stat1:'Happy Customers',stat2:'Days a Week',stat3:'Starting Price',stat3num:'$10+',
+      // Services
+      eyebsvc:'What We Offer',titlesvc:'Our <em>Services</em>',
+      svc1n:'Classic Haircut',svc1d:'Precision cuts tailored to your style. We listen, we execute, you leave looking sharp every single time.',
+      svc2n:'Kids\' Cuts',svc2d:'Patient, fun service for kids of all ages. We make it comfortable and enjoyable — even for the squirmy ones.',
+      svc3n:'Beard Trim',svc3d:'Shape, define, and clean up your beard with expert precision. Straight razor finish available.',
+      svc4n:'Fade & Taper',svc4d:'Clean fades from skin to any length. Mid fades, high fades, tapers — we do them all with precision.',
+      svc5n:'Line-Up',svc5d:'Sharp edges, clean lines. The perfect finishing touch to keep your style looking fresh between cuts.',
+      svc6n:'Cut & Beard Combo',svc6d:'The full treatment. Haircut and beard trim together — walk out looking completely transformed.',
+      // Portfolio
+      eyebpf:'Recent Work',titlepf:'El <em>Portfolio.</em>',
+      pfsub:'Cada corte cuenta una historia — every cut tells a story. Scroll to flip through recent visits from our regulars.',
+      // Process
+      eyebproc:'How a Visit Works · Cómo Funciona',titleproc:'El <em>Proceso.</em>',
+      step1t:'Walk In or<em>Call Ahead.</em>',
+      step1d:'No appointment needed. Just stop by at <strong>327 Droste Rd</strong> during open hours — or call <strong>(314) 299-0816</strong> to lock in a time. We speak English and Spanish.',
+      step2t:'Tell Us<em>What You Want.</em>',
+      step2d:'Bring a reference photo, describe it, or say "the usual." Maria or Bryan will confirm what you want before any clippers touch your head. Honest opinions if asked.',
+      step3t:'Sit, Relax,<em>Get Sharp.</em>',
+      step3d:'Real chair, real conversation. Cuts take 25-40 minutes done properly. Straight razor finish on every fade. Music or sports on the TV.',
+      step4t:'Walk Out<em>Looking Fresh.</em>',
+      step4d:'Hot towel finish, clean lines, looking sharp. Tip what feels right. We\'ll remember your style for next time — that\'s the difference.',
+      // Reviews
+      eyebrev:'What Clients Say',titlerev:'Real <em>Reviews.</em>',
+      // Hours + location
+      eyebfind:'Find Us',titlefind:'Hours &amp; <em>Location.</em>',
+      day1:'Monday – Friday',day2:'Saturday',day3:'Sunday',
+      eyebaddr:'Address',eyebphone:'Phone · Bilingual',
+      // Booking
+      eyebbook:'Book Online',titlebook:'Reserve Your <em>Chair.</em>',
+      bookp:'Tell us what you need and when. We\'ll call to confirm. Prefer to talk? <a href="tel:3142990816">(314) 299-0816</a> rings straight through. Hablamos español.',
+      bookbadge:'✦ Open 7 Days · Walk-Ins Welcome',
+      formsend:'Send Request',
+      // CTA
+      ctah:'Ready to Look<br>Your Best?',
+      ctap:'Walk in or call ahead. La Barbería is open 7 days a week — we\'ll make sure you leave looking and feeling great.',
+      ctabtn:'Book Your Visit'
     },
     es:{
-      book:'Reservar',
+      // Nav
+      navsvc:'Servicios',navwork:'Cortes',navvisit:'Visita',navrev:'Reseñas',book:'Reservar',
+      // Hero
       herotag:'St. Charles, MO · 5.0 Estrellas · 66 Reseñas',
       ratinglabel:'Calificación Google Perfecta',
       claim:'El Arte <em>del Corte.</em>',
       sub:'Cortes expertos para niños, jóvenes y caballeros en un ambiente acogedor y bilingüe. La barbería mejor calificada de St. Charles — sin cita previa.',
-      cta1:'Llama para Reservar',
-      cta2:'Ver Servicios',
-      stat1:'Clientes Felices',
-      stat2:'Días a la Semana',
-      stat3:'Precio Inicial',
-      eyebsvc:'Lo Que Ofrecemos',
-      titlesvc:'Nuestros <em>Servicios</em>'
+      cta1:'Llama para Reservar',cta2:'Ver Servicios',
+      stat1:'Clientes Felices',stat2:'Días a la Semana',stat3:'Precio Inicial',stat3num:'$10+',
+      // Servicios
+      eyebsvc:'Lo Que Ofrecemos',titlesvc:'Nuestros <em>Servicios</em>',
+      svc1n:'Corte Clásico',svc1d:'Cortes precisos hechos a tu estilo. Escuchamos, ejecutamos, y sales luciendo impecable cada vez.',
+      svc2n:'Cortes Para Niños',svc2d:'Servicio paciente y divertido para niños de todas las edades. Lo hacemos cómodo y agradable — incluso para los más inquietos.',
+      svc3n:'Arreglo de Barba',svc3d:'Da forma, define, y limpia tu barba con precisión experta. Acabado con navaja recta disponible.',
+      svc4n:'Fade y Difuminado',svc4d:'Fades limpios desde piel hasta cualquier largo. Mid fades, high fades, tapers — todos con precisión.',
+      svc5n:'Delineado',svc5d:'Bordes definidos, líneas limpias. El toque final para mantener tu estilo fresco entre cortes.',
+      svc6n:'Corte + Barba Combo',svc6d:'El tratamiento completo. Corte y arreglo de barba juntos — sales completamente transformado.',
+      // Portafolio
+      eyebpf:'Trabajo Reciente',titlepf:'El <em>Portafolio.</em>',
+      pfsub:'Cada corte cuenta una historia. Desliza para ver visitas recientes de nuestros clientes habituales.',
+      // Proceso
+      eyebproc:'Cómo Funciona una Visita',titleproc:'El <em>Proceso.</em>',
+      step1t:'Llega o<em>Llama Antes.</em>',
+      step1d:'No necesitas cita. Pasa por <strong>327 Droste Rd</strong> durante horas de servicio — o llama al <strong>(314) 299-0816</strong> para asegurar tu hora. Hablamos inglés y español.',
+      step2t:'Dinos<em>Lo Que Quieres.</em>',
+      step2d:'Trae una foto de referencia, descríbelo, o di "lo de siempre." Maria o Bryan confirmarán lo que quieres antes de tocarte el cabello. Opiniones honestas si las pides.',
+      step3t:'Siéntate,<em>Relájate.</em>',
+      step3d:'Silla cómoda, buena conversación. Los cortes toman 25-40 minutos bien hechos. Acabado con navaja recta en cada fade. Música o deportes en la TV.',
+      step4t:'Sal<em>Luciendo Fresco.</em>',
+      step4d:'Acabado con toalla caliente, líneas limpias, luciendo impecable. Da la propina que te parezca justa. Recordaremos tu estilo para la próxima — esa es la diferencia.',
+      // Reseñas
+      eyebrev:'Lo Que Dicen Los Clientes',titlerev:'Reseñas <em>Reales.</em>',
+      // Horas + ubicación
+      eyebfind:'Encuéntranos',titlefind:'Horario &amp; <em>Ubicación.</em>',
+      day1:'Lunes – Viernes',day2:'Sábado',day3:'Domingo',
+      eyebaddr:'Dirección',eyebphone:'Teléfono · Bilingüe',
+      // Reserva
+      eyebbook:'Reserva Online',titlebook:'Reserva Tu <em>Silla.</em>',
+      bookp:'Dinos lo que necesitas y cuándo. Te llamamos para confirmar. ¿Prefieres hablar? <a href="tel:3142990816">(314) 299-0816</a> contesta directamente. Hablamos español.',
+      bookbadge:'✦ Abierto 7 Días · Sin Cita Previa',
+      formsend:'Enviar Solicitud',
+      // CTA
+      ctah:'¿Listo para Lucir<br>Tu Mejor Estilo?',
+      ctap:'Pasa o llama antes. La Barbería abre los 7 días — nos aseguraremos de que salgas luciendo y sintiéndote increíble.',
+      ctabtn:'Reserva Tu Visita'
     }
   };
   var toggle=document.getElementById('langToggle');
