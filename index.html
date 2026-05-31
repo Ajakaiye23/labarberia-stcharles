@@ -4,6 +4,93 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Barbería | The Art of the Cut · St. Charles, MO</title>
+<!-- SEO -->
+<meta name="description" content="La Barberia - the art of the cut in St. Charles, MO. Precision fades, beard sculpting, and classic styling. Bilingual EN/ES. Book now - (314) 299-0816.">
+<meta name="keywords" content="barberia St. Charles MO, barber, corte de cabello, fade, beard trim, bilingual barber">
+<meta name="author" content="La Barberia">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="geo.region" content="US-MO">
+<meta name="geo.placename" content="St. Charles, Missouri">
+<meta name="geo.position" content="38.785;-90.481">
+<meta name="ICBM" content="38.785, -90.481">
+<link rel="canonical" href="https://labarberia-stl.netlify.app/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:site_name" content="La Barberia">
+<meta property="og:title" content="La Barberia | St. Charles, MO">
+<meta property="og:description" content="La Barberia - the art of the cut in St. Charles, MO. Precision fades, beard sculpting, and classic styling. Bilingual EN/ES. Book now - (314) 299-0816.">
+<meta property="og:url" content="https://labarberia-stl.netlify.app/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=630&q=80&auto=format&fit=crop">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="La Barberia | St. Charles, MO">
+<meta name="twitter:description" content="La Barberia - the art of the cut in St. Charles, MO. Precision fades, beard sculpting, and classic styling. Bilingual EN/ES. Book now - (314) 299-0816.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=630&q=80&auto=format&fit=crop">
+
+<!-- LocalBusiness structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "@id": "https://labarberia-stl.netlify.app/#business",
+  "name": "La Barberia",
+  "description": "La Barberia - the art of the cut in St. Charles, MO. Precision fades, beard sculpting, and classic styling. Bilingual EN/ES. Book now - (314) 299-0816.",
+  "url": "https://labarberia-stl.netlify.app/",
+  "telephone": "+1-314-299-0816",
+  "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=630&q=80&auto=format&fit=crop",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "St. Charles",
+    "addressRegion": "MO",
+    "postalCode": "63301",
+    "addressCountry": "US",
+    "streetAddress": "327 Droste Rd"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 38.785,
+    "longitude": -90.481
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "10:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Sunday"
+      ],
+      "opens": "10:00",
+      "closes": "16:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "66",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}
+</script>
+
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -11,7 +98,6 @@
 body{background:var(--cream);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
 .scroll-bar{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--red),var(--red2));z-index:200;transition:width .12s linear}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 3rem;height:70px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,239,224,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
 .logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-style:italic;font-weight:900;color:var(--dark)}
 .logo span{color:var(--red)}
@@ -25,61 +111,61 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 3rem;height:70px;d
 .nav-cta{background:var(--red);color:#fff;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;padding:11px 24px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;transition:background .2s;text-decoration:none}
 .nav-cta:hover{background:var(--red2)}
 
-/* HERO — diagonal split with massive overlapping type */
-.hero{min-height:115vh;padding-top:70px;position:relative;overflow:hidden;background:var(--cream)}
-.hero-diagonal{position:absolute;inset:0;background:var(--dark);clip-path:polygon(0 0,100% 0,100% 55%,0 100%)}
-#heroCanvas{position:absolute;top:0;left:0;width:100%;height:65%;pointer-events:none;z-index:1;opacity:.85;clip-path:polygon(0 0,100% 0,100% 55%,0 100%)}
-.hero-inner{position:relative;z-index:3;max-width:1400px;margin:0 auto;padding:3rem 3rem 0;height:calc(115vh - 70px);display:flex;flex-direction:column;justify-content:space-between}
-.hero-top{display:flex;justify-content:space-between;align-items:flex-start;color:#fff}
-.hero-tag{font-size:.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--red2);font-weight:600;display:flex;align-items:center;gap:10px;margin-top:1rem}
-.hero-tag::before{content:'';width:30px;height:1px;background:var(--red2)}
-.hero-rating{text-align:right;color:var(--red2);font-family:'Playfair Display',serif;font-style:italic;font-weight:700}
-.hero-rating-num{font-size:2.5rem;line-height:1}
-.hero-rating-label{font-size:.7rem;color:rgba(255,255,255,.5);letter-spacing:3px;text-transform:uppercase;font-style:normal;font-weight:500;margin-top:.3rem}
+.story{position:relative;height:600vh;background:var(--dark)}
+.story-pin{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center}
+#storyCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.story-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,.5) 100%);z-index:2;pointer-events:none}
 
-/* THE BIG NAME — spans the diagonal, overlapping both zones */
-.hero-name{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);font-family:'Playfair Display',serif;font-weight:900;font-style:italic;font-size:clamp(5rem,16vw,18rem);line-height:.85;letter-spacing:-4px;text-align:center;white-space:nowrap;z-index:4;pointer-events:none;mix-blend-mode:difference;color:#fff;will-change:transform}
-.hero-name .word{display:inline-block;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.beat{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:6rem 3rem 4rem;z-index:3;pointer-events:none;opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.beat.in{opacity:1;transform:translateY(0);pointer-events:auto}
+.beat-inner{max-width:1100px;width:100%;margin:0 auto}
+.beat-tag{display:inline-block;background:rgba(192,57,43,.15);border:1px solid rgba(192,57,43,.4);color:var(--red2);font-size:.7rem;letter-spacing:4px;text-transform:uppercase;padding:7px 16px;margin-bottom:2rem;font-weight:700;backdrop-filter:blur(4px)}
+.beat-h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(3.5rem,10vw,11rem);line-height:.92;color:#fff;letter-spacing:-2px;margin-bottom:1.5rem;text-shadow:0 4px 24px rgba(0,0,0,.7)}
+.beat-h1 em{color:var(--red2);font-style:italic;display:block}
+.beat-sub{font-size:1.05rem;color:rgba(255,255,255,.9);line-height:1.85;font-weight:400;max-width:540px;margin-bottom:2.5rem;text-shadow:0 2px 8px rgba(0,0,0,.85)}
+.beat-stat{display:flex;gap:3rem;margin-top:2rem;flex-wrap:wrap}
+.beat-stat-item{display:flex;flex-direction:column;color:#fff}
+.bs-num{font-family:'Playfair Display',serif;font-weight:900;font-size:2.5rem;color:var(--red2);line-height:1;text-shadow:0 4px 16px rgba(0,0,0,.5)}
+.bs-label{font-size:.7rem;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:600;margin-top:.4rem}
 
-.hero-bottom{position:relative;z-index:5;padding-bottom:3rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end}
-.hero-claim{color:var(--dark);max-width:520px}
-.hero-claim h2{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.6rem);font-weight:900;line-height:1.05;margin-bottom:1rem;color:var(--dark)}
-.hero-claim h2 em{color:var(--red);font-style:italic}
-.hero-claim p{font-size:.95rem;color:var(--brown);line-height:1.8;font-weight:400;margin-bottom:2rem}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-red{background:var(--red);color:#fff;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;padding:14px 32px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;transition:background .2s;text-decoration:none;display:inline-block}
+.beat-1 .beat-inner{text-align:left}
+.beat-2 .beat-inner{text-align:right;margin-left:auto}
+.beat-3 .beat-inner{text-align:left}
+.beat-4 .beat-inner{text-align:center}
+.beat-5 .beat-inner{text-align:right;margin-left:auto}
+.beat-6 .beat-inner{text-align:center;padding-bottom:5rem}
+
+.beat-rail{position:absolute;right:2rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:1.4rem;z-index:5;align-items:flex-end}
+.brail-dot{display:flex;align-items:center;gap:14px;color:rgba(255,255,255,.4);font-size:.6rem;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;cursor:pointer;transition:color .3s}
+.brail-dot::after{content:'';width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);transition:all .3s}
+.brail-dot.active{color:var(--red2)}
+.brail-dot.active::after{background:var(--red2);transform:scale(1.5);box-shadow:0 0 16px rgba(231,76,60,.7)}
+
+.btn-red{background:var(--red);color:#fff;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;padding:15px 32px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;transition:background .2s;text-decoration:none;display:inline-block}
 .btn-red:hover{background:var(--red2)}
-.btn-outline-dark{background:transparent;color:var(--dark);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;padding:13px 32px;border:1.5px solid var(--dark);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;text-decoration:none;display:inline-block;font-weight:600}
-.btn-outline-dark:hover{background:var(--dark);color:var(--cream)}
+.btn-ow{background:rgba(255,255,255,.08);backdrop-filter:blur(4px);color:#fff;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;padding:14px 32px;border:1px solid rgba(255,255,255,.35);cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-ow:hover{background:#fff;color:var(--dark)}
+.btn-white{background:#fff;color:var(--red);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;padding:16px 48px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:700;transition:background .2s;display:inline-block;text-decoration:none}
+.btn-white:hover{background:var(--cream)}
+.beat-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.beat-1 .beat-btns,.beat-3 .beat-btns{justify-content:flex-start}
+.beat-2 .beat-btns,.beat-5 .beat-btns{justify-content:flex-end}
+.beat-4 .beat-btns,.beat-6 .beat-btns{justify-content:center}
 .magnetic{transition:transform .3s cubic-bezier(.2,.7,.3,1)}
 .magnetic-inner{display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.3,1);pointer-events:none}
 
-.hero-stats{display:flex;flex-direction:column;gap:.6rem;justify-self:end;text-align:right}
-.hero-stat{background:rgba(192,57,43,.08);border-right:3px solid var(--red);padding:1rem 1.5rem;color:var(--dark)}
-.hs-num{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;line-height:1;color:var(--red)}
-.hs-label{font-size:.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--brown);font-weight:600;margin-top:.2rem}
-
-/* SPLIT TEXT */
-.split-line{display:block;overflow:hidden;line-height:1.05}
-.split-char{display:inline-block;will-change:transform,opacity;transform:translateY(110%);opacity:0;transition:transform .9s cubic-bezier(.22,1,.36,1),opacity .8s ease}
-.split-char.in{transform:translateY(0);opacity:1}
-.split-word{display:inline-block;white-space:nowrap}
-
-/* MARQUEE */
-.marquee{background:var(--red);padding:1rem 0;overflow:hidden}
+.marquee{background:var(--red);padding:1rem 0;overflow:hidden;position:relative;z-index:4}
 .marquee-track{display:flex;animation:scroll 22s linear infinite;white-space:nowrap}
 .marquee-item{font-family:'Playfair Display',serif;font-style:italic;font-weight:900;font-size:1.1rem;color:#fff;padding:0 2.5rem;display:flex;align-items:center;gap:2.5rem}
 .marquee-item::after{content:'✦';font-style:normal;font-size:.7rem;opacity:.7}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* SECTIONS */
 .section{padding:7rem 3rem;max-width:1300px;margin:0 auto}
 .eyebrow{font-size:.72rem;letter-spacing:4px;text-transform:uppercase;color:var(--red);margin-bottom:1rem;font-weight:600;display:flex;align-items:center;gap:10px}
 .eyebrow::before{content:'';width:32px;height:1px;background:var(--red)}
 .title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,5rem);font-weight:900;line-height:1;margin-bottom:1.5rem;letter-spacing:-1px}
 .title em{font-style:italic;color:var(--red)}
 
-/* SERVICES — staggered offset grid (different from Joe's straight grid) */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
 .svc-card{background:#fff;padding:2.8rem 2.5rem;border:1px solid var(--border);position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.34,1.2,.64,1),box-shadow .35s}
 .svc-card:nth-child(even){transform:translateY(2.5rem)}
@@ -90,14 +176,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 3rem;height:70px;d
 .svc-price{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:900;color:var(--red);line-height:1;margin-bottom:.4rem}
 .svc-price span{font-size:1rem;color:var(--brown)}
 .svc-name{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:700;margin-bottom:.8rem;color:var(--dark)}
-.svc-desc{font-size:.85rem;color:var(--brown);line-height:1.75;font-weight:400}
+.svc-desc{font-size:.85rem;color:var(--brown);line-height:1.75}
 
-/* PORTFOLIO — vertical sticky-stack (different from Joe's masonry) */
+/* PORTFOLIO: VERTICAL PEEL-STACK */
 .portfolio-section{background:var(--dark);padding:7rem 3rem;position:relative}
 .portfolio-section .eyebrow{color:var(--red2)}
 .portfolio-section .title{color:#fff}
 .portfolio-intro{max-width:1300px;margin:0 auto 4rem;display:grid;grid-template-columns:1.5fr 1fr;gap:5rem;align-items:end}
-.portfolio-intro p{color:rgba(255,255,255,.55);font-size:.95rem;line-height:1.9;font-weight:400;max-width:540px}
+.portfolio-intro p{color:rgba(255,255,255,.55);font-size:.95rem;line-height:1.9;max-width:540px}
 .portfolio-stage{max-width:1100px;margin:0 auto;position:relative;height:560px}
 .pstack{position:relative;height:100%;perspective:1400px}
 .pstack-card{position:absolute;left:50%;top:0;width:85%;max-width:880px;height:100%;transform:translateX(-50%);background:#222;border:1px solid rgba(255,255,255,.08);overflow:hidden;border-radius:4px;will-change:transform,opacity}
@@ -108,30 +194,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 3rem;height:70px;d
 .pstack-name{font-family:'Playfair Display',serif;font-size:2.2rem;color:#fff;font-weight:900;line-height:1.05}
 .pstack-num{position:absolute;top:1.5rem;right:2rem;font-family:'Playfair Display',serif;font-style:italic;font-weight:900;font-size:1.4rem;color:rgba(255,255,255,.4);z-index:3}
 
-/* PROCESS — vertical timeline (different from Joe's horizontal) */
-.process-section{background:var(--cream2);padding:7rem 3rem}
-.process-inner{max-width:1000px;margin:0 auto}
-.vtl{position:relative;margin-top:5rem;padding-left:80px}
-.vtl::before{content:'';position:absolute;left:32px;top:0;bottom:0;width:2px;background:var(--border)}
-.vtl-step{position:relative;padding-bottom:4rem}
-.vtl-step:last-child{padding-bottom:0}
-.vtl-step::before{content:attr(data-n);position:absolute;left:-80px;top:0;width:64px;height:64px;border-radius:50%;background:var(--cream2);border:2px solid var(--red);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:900;font-style:italic;color:var(--red);font-size:1.4rem;transition:background .4s,color .4s,transform .4s}
-.vtl-step.in::before{background:var(--red);color:#fff;transform:scale(1.08)}
-.vtl-title{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:900;color:var(--dark);margin-bottom:.7rem;line-height:1.05}
-.vtl-title em{color:var(--red);font-style:italic}
-.vtl-desc{font-size:.92rem;color:var(--brown);line-height:1.85;font-weight:400;max-width:540px}
-
-/* REVIEWS */
 .reviews-section{background:var(--dark);padding:7rem 3rem}
 .reviews-inner{max-width:1300px;margin:0 auto}
 .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
 .rev-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:2.5rem;transition:background .3s,transform .3s}
 .rev-card:hover{background:rgba(255,255,255,0.07);transform:translateY(-3px)}
 .rev-stars{color:var(--red2);font-size:.95rem;letter-spacing:2px;margin-bottom:1rem}
-.rev-text{font-size:.9rem;color:rgba(255,255,255,0.7);line-height:1.9;font-style:italic;margin-bottom:1.5rem;font-weight:400}
+.rev-text{font-size:.9rem;color:rgba(255,255,255,0.7);line-height:1.9;font-style:italic;margin-bottom:1.5rem}
 .rev-author{font-family:'Playfair Display',serif;font-weight:700;font-style:italic;color:var(--red2);font-size:.95rem}
 
-/* HOURS */
 .hours-section{padding:7rem 3rem;background:var(--cream2)}
 .hours-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
 .hours-list{margin-top:2.5rem}
@@ -142,36 +213,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 3rem;height:70px;d
 .addr-card .eyebrow{margin-bottom:.5rem}
 .addr-card p{font-size:1.1rem;font-family:'Playfair Display',serif;font-weight:700;line-height:1.4;color:var(--dark)}
 
-/* BOOKING FORM */
 .booking-section{background:var(--cream);padding:7rem 3rem;border-top:1px solid var(--border)}
 .booking-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start}
-.booking-side p{font-size:.95rem;color:var(--brown);line-height:1.9;font-weight:400;margin-bottom:2rem;max-width:380px}
+.booking-side p{font-size:.95rem;color:var(--brown);line-height:1.9;margin-bottom:2rem;max-width:380px}
 .booking-side a{color:var(--red);text-decoration:none;font-weight:700}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-group{display:flex;flex-direction:column;margin-bottom:1.1rem}
 .form-group label{font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:.5rem}
 .form-group input,.form-group select,.form-group textarea{background:#fff;border:1px solid var(--border);color:var(--dark);font-family:'DM Sans',sans-serif;font-size:.93rem;padding:.85rem 1rem;outline:none;transition:border-color .2s;-webkit-appearance:none;border-radius:2px}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--red)}
-.booking-success{padding:2rem 0}
 
-/* CTA */
 .cta-section{background:var(--red);padding:8rem 3rem;text-align:center;position:relative;overflow:hidden}
 .cta-section::before{content:'★';position:absolute;font-family:serif;font-size:40rem;top:50%;left:50%;transform:translate(-50%,-50%);color:rgba(0,0,0,.06);pointer-events:none;line-height:.8}
 .cta-section>*{position:relative;z-index:2}
 .cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,7rem);font-weight:900;font-style:italic;color:#fff;line-height:.95;margin-bottom:1.5rem}
-.cta-section p{font-size:1rem;color:rgba(255,255,255,0.85);max-width:480px;margin:0 auto 3rem;line-height:1.9;font-weight:400}
+.cta-section p{font-size:1rem;color:rgba(255,255,255,0.85);max-width:480px;margin:0 auto 3rem;line-height:1.9}
 .cta-phone{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:#fff;display:block;margin-bottom:2rem;text-decoration:none;font-style:italic}
-.btn-white{background:#fff;color:var(--red);font-size:.85rem;letter-spacing:2px;text-transform:uppercase;padding:16px 48px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:700;transition:background .2s;display:inline-block;text-decoration:none}
-.btn-white:hover{background:var(--cream)}
 
 footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
 .footer-logo{font-family:'Playfair Display',serif;font-style:italic;font-weight:900;font-size:1.2rem;color:#fff}
 .footer-logo span{color:var(--red2)}
 .footer-copy{font-size:.72rem;letter-spacing:1px;color:rgba(255,255,255,0.4)}
 
-/* MODAL */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:10000;align-items:center;justify-content:center}
-.modal-overlay.active{display:flex}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.78);z-index:10000;align-items:center;justify-content:center}.modal-overlay.active{display:flex}
 .modal-box{background:#fff;max-width:420px;width:90%;padding:2.5rem;text-align:center;position:relative;animation:popIn .25s ease}
 .modal-box h3{font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;color:var(--dark);margin-bottom:.5rem;font-weight:900}
 .modal-box p{font-size:.85rem;color:#666;line-height:1.6;margin-bottom:1.5rem}
@@ -183,29 +247,19 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#999;line-height:1}
 @keyframes popIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
 
-/* RESPONSIVE */
 @media(max-width:900px){
-  nav{padding:0 1.2rem;height:60px}
-  .nav-links,.lang-toggle{display:none}
-  .hero{min-height:auto;padding-top:60px}
-  .hero-diagonal{clip-path:polygon(0 0,100% 0,100% 75%,0 100%)}
-  #heroCanvas{height:75%;clip-path:polygon(0 0,100% 0,100% 75%,0 100%)}
-  .hero-inner{padding:2rem 1.5rem 0;height:auto;min-height:calc(100vh - 60px)}
-  .hero-name{font-size:clamp(3rem,15vw,6rem);top:38%}
-  .hero-bottom{grid-template-columns:1fr;gap:2.5rem;padding-bottom:3rem}
-  .hero-stats{justify-self:start;text-align:left}
-  .section,.reviews-section,.hours-section,.cta-section,.process-section,.portfolio-section,.booking-section{padding:5rem 1.5rem}
-  .services-grid{grid-template-columns:1fr}
-  .svc-card:nth-child(even){transform:none}
-  .svc-card:nth-child(even):hover{transform:translateY(-6px)}
+  nav{padding:0 1.2rem;height:60px}.nav-links,.lang-toggle{display:none}
+  .story{height:auto}.story-pin{position:relative;height:auto;display:block;padding:5rem 0}
+  #storyCanvas{position:relative;width:100%;height:60vh;display:block}
+  .beat{position:relative;opacity:1;transform:none;padding:3rem 1.5rem;pointer-events:auto;justify-content:flex-start}
+  .beat-inner{text-align:left!important;margin-left:0!important}.beat-rail{display:none}
+  .section,.reviews-section,.hours-section,.cta-section,.portfolio-section,.booking-section{padding:5rem 1.5rem}
+  .services-grid{grid-template-columns:1fr}.svc-card:nth-child(even){transform:none}
   .portfolio-intro,.hours-inner,.booking-inner,.reviews-grid{grid-template-columns:1fr;gap:3rem}
   .portfolio-stage{height:auto}
   .pstack{height:auto;display:flex;flex-direction:column;gap:1.5rem;perspective:none}
   .pstack-card{position:relative;left:auto;top:auto;width:100%;height:380px;transform:none!important}
   .form-row{grid-template-columns:1fr}
-  .vtl{padding-left:60px}
-  .vtl-step::before{left:-60px;width:48px;height:48px;font-size:1.1rem}
-  .vtl::before{left:24px}
 }
 </style>
 </head>
@@ -218,40 +272,91 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
     <ul class="nav-links">
       <li><a href="#services" data-i18n="navsvc">Services</a></li>
       <li><a href="#portfolio" data-i18n="navwork">Work</a></li>
-      <li><a href="#process" data-i18n="navvisit">Visit</a></li>
       <li><a href="#reviews" data-i18n="navrev">Reviews</a></li>
+      <li><a href="#booking" data-i18n="navbook">Book</a></li>
     </ul>
     <div class="lang-toggle" id="langToggle">
       <button data-lang="en" class="active">EN</button>
       <button data-lang="es">ES</button>
     </div>
-    <a href="tel:3142990816" class="nav-cta" data-i18n="book" onclick="if(window.innerWidth>768){event.preventDefault();openBookModal()}">Book Now</a>
+    <a href="tel:3142990816" class="nav-cta magnetic" data-i18n="book" onclick="if(window.innerWidth>768){event.preventDefault();openBookModal()}">Book Now</a>
   </div>
 </nav>
 
-<!-- HERO: diagonal split with massive overlapping type -->
-<section class="hero">
-  <div class="hero-diagonal"></div>
-  <canvas id="heroCanvas"></canvas>
-  <div class="hero-inner">
-    <div class="hero-top">
-      <div class="hero-tag" data-i18n="herotag">St. Charles, MO · 5.0 Stars · 66 Reviews</div>
-      <div class="hero-rating"><div class="hero-rating-num">5.0★</div><div class="hero-rating-label" data-i18n="ratinglabel">Perfect Google Rating</div></div>
+<section class="story">
+  <div class="story-pin">
+    <canvas id="storyCanvas"></canvas>
+    <div class="story-vignette"></div>
+
+    <div class="beat-rail" id="beatRail">
+      <div class="brail-dot active" data-beat="0">El Arte</div>
+      <div class="brail-dot" data-beat="1">The Crew</div>
+      <div class="brail-dot" data-beat="2">The Cut</div>
+      <div class="brail-dot" data-beat="3">Services</div>
+      <div class="brail-dot" data-beat="4">All Ages</div>
+      <div class="brail-dot" data-beat="5">Book</div>
     </div>
-    <div class="hero-name" id="heroName"><span class="word">La</span> <span class="word">Barbería</span></div>
-    <div class="hero-bottom">
-      <div class="hero-claim">
-        <h2 data-i18n="claim">The Art <em>of the Cut.</em></h2>
-        <p data-i18n="sub">Expert grooming for kids, teens, and gentlemen in a welcoming bilingual environment. St. Charles's top-rated barbershop — walk-ins always welcome.</p>
-        <div class="hero-btns">
+
+    <div class="beat beat-1 in">
+      <div class="beat-inner">
+        <div class="beat-tag" data-i18n="herotag">St. Charles, MO · 5.0 Stars · 66 Reviews</div>
+        <h1 class="beat-h1" data-i18n="claim">The Art<em>of the Cut.</em></h1>
+        <p class="beat-sub" data-i18n="sub">Expert grooming for kids, teens, and gentlemen in a welcoming bilingual environment. St. Charles's top-rated barbershop — walk-ins always welcome.</p>
+        <div class="beat-btns">
           <a href="tel:3142990816" class="btn-red magnetic" onclick="if(window.innerWidth>768){event.preventDefault();openBookModal()}"><span class="magnetic-inner" data-i18n="cta1">Call to Book</span></a>
-          <a href="#services" class="btn-outline-dark magnetic"><span class="magnetic-inner" data-i18n="cta2">View Services</span></a>
+          <a href="#booking" class="btn-ow magnetic"><span class="magnetic-inner" data-i18n="cta2">Book Online</span></a>
         </div>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="hs-num">66+</div><div class="hs-label" data-i18n="stat1">Happy Customers</div></div>
-        <div class="hero-stat"><div class="hs-num">7</div><div class="hs-label" data-i18n="stat2">Days a Week</div></div>
-        <div class="hero-stat"><div class="hs-num" data-i18n="stat3num">$10+</div><div class="hs-label" data-i18n="stat3">Starting Price</div></div>
+    </div>
+
+    <div class="beat beat-2">
+      <div class="beat-inner">
+        <div class="beat-tag" data-i18n="b2tag">Meet The Crew</div>
+        <h1 class="beat-h1" data-i18n="b2h">Maria &amp;<em>Bryan.</em></h1>
+        <p class="beat-sub" style="margin-left:auto" data-i18n="b2sub">Two artists with different specialties. Tell them your idea, show them a reference, or just say "the usual." They'll remember.</p>
+        <div class="beat-stat" style="justify-content:flex-end">
+          <div class="beat-stat-item"><div class="bs-num">5.0★</div><div class="bs-label" data-i18n="b2stat1">Perfect Rating</div></div>
+          <div class="beat-stat-item"><div class="bs-num">7</div><div class="bs-label" data-i18n="b2stat2">Days a Week</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="beat beat-3">
+      <div class="beat-inner">
+        <div class="beat-tag" data-i18n="b3tag">The Cut</div>
+        <h1 class="beat-h1" data-i18n="b3h">Sharp Lines.<em>Hot Towel Finish.</em></h1>
+        <p class="beat-sub" data-i18n="b3sub">Real chair, real conversation, real razor finish. Cuts take 25-40 minutes done properly. Straight razor finish on every fade.</p>
+      </div>
+    </div>
+
+    <div class="beat beat-4">
+      <div class="beat-inner">
+        <div class="beat-tag" data-i18n="b4tag">What We Do</div>
+        <h1 class="beat-h1" data-i18n="b4h">Six Ways to<em>Look Fresh.</em></h1>
+        <p class="beat-sub" style="margin:0 auto 2rem" data-i18n="b4sub">Classic cuts, kids' cuts, beard trims, fades, line-ups, full combos. All ages, all welcome. Hablamos español.</p>
+        <div class="beat-btns" style="justify-content:center">
+          <a href="#services" class="btn-red magnetic"><span class="magnetic-inner" data-i18n="b4cta">View Services</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="beat beat-5">
+      <div class="beat-inner">
+        <div class="beat-tag" data-i18n="b5tag">All Welcome</div>
+        <h1 class="beat-h1" data-i18n="b5h">Open Late.<em>Bilingual.</em></h1>
+        <p class="beat-sub" style="margin-left:auto" data-i18n="b5sub">Open Monday through Saturday 10-8, Sunday 10-4. Bilingual barbers — call in English or Spanish. Walk in or call ahead.</p>
+      </div>
+    </div>
+
+    <div class="beat beat-6">
+      <div class="beat-inner">
+        <div class="beat-tag" data-i18n="b6tag">Ready to Book?</div>
+        <h1 class="beat-h1" data-i18n="b6h">Call Today.</h1>
+        <a href="tel:3142990816" style="font-family:'Playfair Display',serif;font-style:italic;font-weight:900;font-size:clamp(2.5rem,5vw,4rem);color:var(--red2);text-decoration:none;display:block;margin:1.5rem 0;text-shadow:0 4px 24px rgba(0,0,0,.5)">(314) 299-0816</a>
+        <div class="beat-btns" style="justify-content:center">
+          <a href="tel:3142990816" class="btn-red magnetic" onclick="if(window.innerWidth>768){event.preventDefault();openBookModal()}"><span class="magnetic-inner" data-i18n="b6cta1">Call</span></a>
+          <a href="#booking" class="btn-ow magnetic"><span class="magnetic-inner" data-i18n="b6cta2">Book Online</span></a>
+        </div>
       </div>
     </div>
   </div>
@@ -259,75 +364,56 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 
 <div class="marquee">
   <div class="marquee-track">
-    <div class="marquee-item">Haircuts</div><div class="marquee-item">Fades</div><div class="marquee-item">Beard Trims</div><div class="marquee-item">Kids' Cuts</div><div class="marquee-item">Line-Ups</div><div class="marquee-item">Bilingual Service</div>
-    <div class="marquee-item">Haircuts</div><div class="marquee-item">Fades</div><div class="marquee-item">Beard Trims</div><div class="marquee-item">Kids' Cuts</div><div class="marquee-item">Line-Ups</div><div class="marquee-item">Bilingual Service</div>
+    <div class="marquee-item">Haircuts</div><div class="marquee-item">Fades</div><div class="marquee-item">Beard Trims</div><div class="marquee-item">Kids' Cuts</div><div class="marquee-item">Line-Ups</div><div class="marquee-item">Bilingual</div>
+    <div class="marquee-item">Haircuts</div><div class="marquee-item">Fades</div><div class="marquee-item">Beard Trims</div><div class="marquee-item">Kids' Cuts</div><div class="marquee-item">Line-Ups</div><div class="marquee-item">Bilingual</div>
   </div>
 </div>
 
-<!-- SERVICES -->
 <section class="section" id="services">
   <div class="eyebrow" data-i18n="eyebsvc">What We Offer</div>
   <h2 class="title" data-split data-i18n="titlesvc">Our <em>Services</em></h2>
   <div class="services-grid">
     <div class="svc-card"><div class="svc-price">$25<span>+</span></div><div class="svc-name" data-i18n="svc1n">Classic Haircut</div><div class="svc-desc" data-i18n="svc1d">Precision cuts tailored to your style. We listen, we execute, you leave looking sharp every single time.</div></div>
-    <div class="svc-card"><div class="svc-price">$20<span>+</span></div><div class="svc-name" data-i18n="svc2n">Kids' Cuts</div><div class="svc-desc" data-i18n="svc2d">Patient, fun service for kids of all ages. We make it comfortable and enjoyable — even for the squirmy ones.</div></div>
-    <div class="svc-card"><div class="svc-price">$15<span>+</span></div><div class="svc-name" data-i18n="svc3n">Beard Trim</div><div class="svc-desc" data-i18n="svc3d">Shape, define, and clean up your beard with expert precision. Straight razor finish available.</div></div>
-    <div class="svc-card"><div class="svc-price">$30<span>+</span></div><div class="svc-name" data-i18n="svc4n">Fade & Taper</div><div class="svc-desc" data-i18n="svc4d">Clean fades from skin to any length. Mid fades, high fades, tapers — we do them all with precision.</div></div>
-    <div class="svc-card"><div class="svc-price">$10<span>+</span></div><div class="svc-name" data-i18n="svc5n">Line-Up</div><div class="svc-desc" data-i18n="svc5d">Sharp edges, clean lines. The perfect finishing touch to keep your style looking fresh between cuts.</div></div>
-    <div class="svc-card"><div class="svc-price">$40<span>+</span></div><div class="svc-name" data-i18n="svc6n">Cut & Beard Combo</div><div class="svc-desc" data-i18n="svc6d">The full treatment. Haircut and beard trim together — walk out looking completely transformed.</div></div>
+    <div class="svc-card"><div class="svc-price">$20<span>+</span></div><div class="svc-name" data-i18n="svc2n">Kids' Cuts</div><div class="svc-desc" data-i18n="svc2d">Patient, fun service for kids of all ages. Even the squirmy ones.</div></div>
+    <div class="svc-card"><div class="svc-price">$15<span>+</span></div><div class="svc-name" data-i18n="svc3n">Beard Trim</div><div class="svc-desc" data-i18n="svc3d">Shape, define, clean up. Straight razor finish available.</div></div>
+    <div class="svc-card"><div class="svc-price">$30<span>+</span></div><div class="svc-name" data-i18n="svc4n">Fade & Taper</div><div class="svc-desc" data-i18n="svc4d">Clean fades from skin to any length. Done with precision.</div></div>
+    <div class="svc-card"><div class="svc-price">$10<span>+</span></div><div class="svc-name" data-i18n="svc5n">Line-Up</div><div class="svc-desc" data-i18n="svc5d">Sharp edges, clean lines. Keep your style fresh between cuts.</div></div>
+    <div class="svc-card"><div class="svc-price">$40<span>+</span></div><div class="svc-name" data-i18n="svc6n">Cut & Beard Combo</div><div class="svc-desc" data-i18n="svc6d">The full treatment. Walk out completely transformed.</div></div>
   </div>
 </section>
 
-<!-- PORTFOLIO: vertical peel-stack (each tile slides up to reveal next) -->
 <section class="portfolio-section" id="portfolio">
   <div class="portfolio-intro">
     <div>
       <div class="eyebrow" data-i18n="eyebpf">Recent Work</div>
-      <h2 class="title" data-split data-i18n="titlepf">El <em>Portfolio.</em></h2>
+      <h2 class="title" data-split data-i18n="titlepf">El <em>Portafolio.</em></h2>
     </div>
-    <p data-i18n="pfsub">Cada corte cuenta una historia — every cut tells a story. Scroll to flip through recent visits from our regulars.</p>
+    <p data-i18n="pfsub">Cada corte cuenta una historia. Scroll to flip through recent visits from our regulars.</p>
   </div>
   <div class="portfolio-stage">
     <div class="pstack" id="pstack">
-      <div class="pstack-card" data-i="0"><div class="pstack-fallback">L</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">01 / 06</div><div class="pstack-info"><div class="pstack-cat">Classic Haircut · Maria</div><div class="pstack-name">The Cleanup</div></div></div>
-      <div class="pstack-card" data-i="1"><div class="pstack-fallback">A</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">02 / 06</div><div class="pstack-info"><div class="pstack-cat">Mid Fade · Bryan</div><div class="pstack-name">The Skin Drop</div></div></div>
-      <div class="pstack-card" data-i="2"><div class="pstack-fallback">B</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">03 / 06</div><div class="pstack-info"><div class="pstack-cat">Beard Sculpt</div><div class="pstack-name">El Gentleman</div></div></div>
-      <div class="pstack-card" data-i="3"><div class="pstack-fallback">R</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">04 / 06</div><div class="pstack-info"><div class="pstack-cat">Cut + Beard Combo</div><div class="pstack-name">Total Refresh</div></div></div>
-      <div class="pstack-card" data-i="4"><div class="pstack-fallback">E</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1521490878406-d7ab1ac09b75?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">05 / 06</div><div class="pstack-info"><div class="pstack-cat">Kid's First Cut</div><div class="pstack-name">First Visit</div></div></div>
-      <div class="pstack-card" data-i="5"><div class="pstack-fallback">R</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1620331317535-83d3aa10de23?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">06 / 06</div><div class="pstack-info"><div class="pstack-cat">Line-Up</div><div class="pstack-name">Sharp Lines</div></div></div>
-      <div class="pstack-card" data-i="6"><div class="pstack-fallback">Í</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">07 / 06</div><div class="pstack-info"><div class="pstack-cat">Modern Style</div><div class="pstack-name">Pomp & Fade</div></div></div>
+      <div class="pstack-card"><div class="pstack-fallback">L</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">01 / 06</div><div class="pstack-info"><div class="pstack-cat">Classic · Maria</div><div class="pstack-name">The Cleanup</div></div></div>
+      <div class="pstack-card"><div class="pstack-fallback">A</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">02 / 06</div><div class="pstack-info"><div class="pstack-cat">Mid Fade · Bryan</div><div class="pstack-name">The Skin Drop</div></div></div>
+      <div class="pstack-card"><div class="pstack-fallback">B</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">03 / 06</div><div class="pstack-info"><div class="pstack-cat">Beard Sculpt</div><div class="pstack-name">El Gentleman</div></div></div>
+      <div class="pstack-card"><div class="pstack-fallback">R</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1605497788044-5a32c7078486?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">04 / 06</div><div class="pstack-info"><div class="pstack-cat">Combo</div><div class="pstack-name">Total Refresh</div></div></div>
+      <div class="pstack-card"><div class="pstack-fallback">E</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1521490878406-d7ab1ac09b75?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">05 / 06</div><div class="pstack-info"><div class="pstack-cat">Kid's First Cut</div><div class="pstack-name">First Visit</div></div></div>
+      <div class="pstack-card"><div class="pstack-fallback">R</div><div class="pstack-bg" style="background-image:url('https://images.unsplash.com/photo-1620331317535-83d3aa10de23?w=900&q=80&auto=format&fit=crop')"></div><div class="pstack-num">06 / 06</div><div class="pstack-info"><div class="pstack-cat">Line-Up</div><div class="pstack-name">Sharp Lines</div></div></div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS: vertical timeline -->
-<section class="process-section" id="process">
-  <div class="process-inner">
-    <div class="eyebrow" data-i18n="eyebproc">How a Visit Works · Cómo Funciona</div>
-    <h2 class="title" data-split data-i18n="titleproc">El <em>Proceso.</em></h2>
-    <div class="vtl">
-      <div class="vtl-step" data-n="01"><div class="vtl-title" data-i18n="step1t">Walk In or<em>Call Ahead.</em></div><div class="vtl-desc" data-i18n="step1d">No appointment needed. Just stop by at <strong>327 Droste Rd</strong> during open hours — or call <strong>(314) 299-0816</strong> to lock in a time. We speak English and Spanish.</div></div>
-      <div class="vtl-step" data-n="02"><div class="vtl-title" data-i18n="step2t">Tell Us<em>What You Want.</em></div><div class="vtl-desc" data-i18n="step2d">Bring a reference photo, describe it, or say "the usual." Maria or Bryan will confirm what you want before any clippers touch your head. Honest opinions if asked.</div></div>
-      <div class="vtl-step" data-n="03"><div class="vtl-title" data-i18n="step3t">Sit, Relax,<em>Get Sharp.</em></div><div class="vtl-desc" data-i18n="step3d">Real chair, real conversation. Cuts take 25-40 minutes done properly. Straight razor finish on every fade. Music or sports on the TV.</div></div>
-      <div class="vtl-step" data-n="04"><div class="vtl-title" data-i18n="step4t">Walk Out<em>Looking Fresh.</em></div><div class="vtl-desc" data-i18n="step4d">Hot towel finish, clean lines, looking sharp. Tip what feels right. We'll remember your style for next time — that's the difference.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
 <div class="reviews-section" id="reviews">
   <div class="reviews-inner">
     <div class="eyebrow" style="color:var(--red2)" data-i18n="eyebrev">What Clients Say</div>
     <h2 class="title" style="color:#fff" data-split data-i18n="titlerev">Real <em>Reviews.</em></h2>
     <div class="reviews-grid">
-      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Excellent service and attention to detail! My stylist took the time to understand exactly what I wanted, and the results were perfect. Definitely one of the best salons in the area."</p><div class="rev-author">— Google Review</div></div>
-      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"I've been a faithful client for years. Maria is absolutely amazing and does an amazing job every time. I've brought my kids and the barbers are always super friendly."</p><div class="rev-author">— Google Review</div></div>
-      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Bryan did a mid fade on my youngest son and he loved it. Very kind and professional. We will be coming back for sure — best barbershop in St. Charles."</p><div class="rev-author">— Google Review</div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Excellent service and attention to detail! My stylist took the time to understand exactly what I wanted, and the results were perfect."</p><div class="rev-author">— Google Review</div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"I've been a faithful client for years. Maria is absolutely amazing and does an amazing job every time."</p><div class="rev-author">— Google Review</div></div>
+      <div class="rev-card"><div class="rev-stars">★★★★★</div><p class="rev-text">"Bryan did a mid fade on my youngest son and he loved it. Very kind and professional. We will be coming back for sure."</p><div class="rev-author">— Google Review</div></div>
     </div>
   </div>
 </div>
 
-<!-- HOURS -->
 <div class="hours-section" id="hours">
   <div class="hours-inner">
     <div>
@@ -340,26 +426,18 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
       </div>
     </div>
     <div style="padding-top:5rem">
-      <div class="addr-card">
-        <div class="eyebrow" data-i18n="eyebaddr">Address</div>
-        <p>327 Droste Rd<br>St. Charles, MO 63301</p>
-      </div>
-      <div class="addr-card">
-        <div class="eyebrow" data-i18n="eyebphone">Phone · Bilingual</div>
-        <p>(314) 299-0816</p>
-      </div>
+      <div class="addr-card"><div class="eyebrow" data-i18n="eyebaddr">Address</div><p>327 Droste Rd<br>St. Charles, MO 63301</p></div>
+      <div class="addr-card"><div class="eyebrow" data-i18n="eyebphone">Phone · Bilingual</div><p>(314) 299-0816</p></div>
     </div>
   </div>
 </div>
 
-<!-- BOOKING FORM -->
 <div class="booking-section" id="booking">
   <div class="booking-inner">
-    <div class="booking-side">
+    <div>
       <div class="eyebrow" data-i18n="eyebbook">Book Online</div>
       <h2 class="title" data-split data-i18n="titlebook">Reserve Your <em>Chair.</em></h2>
       <p data-i18n="bookp">Tell us what you need and when. We'll call to confirm. Prefer to talk? <a href="tel:3142990816">(314) 299-0816</a> rings straight through. Hablamos español.</p>
-      <p data-i18n="bookbadge" style="font-size:.82rem;color:var(--red);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:0">✦ Open 7 Days · Walk-Ins Welcome</p>
     </div>
     <div>
       <form id="bookingForm" name="booking" data-netlify="true" data-netlify-honeypot="bot-field">
@@ -373,23 +451,14 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
           <div class="form-group"><label for="bService">Service / Servicio</label><select id="bService" name="service" required><option value="" disabled selected>Choose...</option><option>Classic Haircut</option><option>Kids' Cut</option><option>Beard Trim</option><option>Fade & Taper</option><option>Line-Up</option><option>Cut + Beard Combo</option></select></div>
           <div class="form-group"><label for="bBarber">Barber</label><select id="bBarber" name="barber"><option value="" disabled selected>Any</option><option>Maria</option><option>Bryan</option><option>No preference</option></select></div>
         </div>
-        <div class="form-row">
-          <div class="form-group"><label for="bDate">Preferred Date</label><input type="date" id="bDate" name="date"/></div>
-          <div class="form-group"><label for="bLang">Preferred Language</label><select id="bLang" name="language"><option>English</option><option>Español</option><option>Either is fine</option></select></div>
-        </div>
+        <div class="form-group"><label for="bDate">Preferred Date</label><input type="date" id="bDate" name="date"/></div>
         <div class="form-group"><label for="bNotes">Notes</label><textarea id="bNotes" name="notes" rows="3" placeholder="Anything we should know..."></textarea></div>
         <button type="submit" class="btn-red magnetic" style="width:100%;padding:16px;font-size:.85rem;letter-spacing:2px"><span class="magnetic-inner" data-i18n="formsend">Send Request</span></button>
       </form>
-      <div id="bookingSuccess" class="booking-success" style="display:none">
-        <div class="eyebrow">¡Listo!</div>
-        <h3 class="title" style="font-size:clamp(1.5rem,3vw,2.8rem)">See You <em>Soon.</em></h3>
-        <p style="font-size:.92rem;color:var(--brown);line-height:1.9;font-weight:400">Got it. We'll call within the hour. Sooner? <a href="tel:3142990816" style="color:var(--red);font-weight:700;text-decoration:none">(314) 299-0816</a></p>
-      </div>
     </div>
   </div>
 </div>
 
-<!-- CTA -->
 <div class="cta-section">
   <h2 data-i18n="ctah">Ready to Look<br>Your Best?</h2>
   <p data-i18n="ctap">Walk in or call ahead. La Barbería is open 7 days a week — we'll make sure you leave looking and feeling great.</p>
@@ -402,390 +471,221 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
   <div class="footer-copy">© 2026 La Barbería · 327 Droste Rd, St. Charles, MO 63301</div>
 </footer>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="bookModal"><div class="modal-box"><button class="modal-close" onclick="closeModal()">&times;</button><h3>La Barbería</h3><p>Walk in or give us a call.</p><a href="tel:3142990816" class="modal-phone">(314) 299-0816</a><div class="modal-addr">327 Droste Rd, St. Charles, MO 63301</div><div class="modal-btns"><a href="tel:3142990816" class="modal-btn-call">Call Now</a><a href="https://maps.google.com/?q=327+Droste+Rd+St+Charles+MO" target="_blank" class="modal-btn-map">Get Directions</a></div></div></div>
 <script>function openBookModal(){document.getElementById('bookModal').classList.add('active')}function closeModal(){document.getElementById('bookModal').classList.remove('active')}document.getElementById('bookModal').addEventListener('click',function(e){if(e.target===this)closeModal()});</script>
 
-<!-- CDN -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 
-<!-- Scroll progress -->
+<script>(function(){var bar=document.getElementById('scrollBar');function upd(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?(window.scrollY/m)*100:0)+'%'}window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd,{passive:true});upd()})();</script>
+
 <script>
-(function(){var bar=document.getElementById('scrollBar');function upd(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?(window.scrollY/m)*100:0)+'%'}window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd,{passive:true});upd()})();
+(function(){if(!window.Lenis||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+var lenis=new Lenis({lerp:0.07,smoothWheel:true,smoothTouch:false,wheelMultiplier:0.85,touchMultiplier:1.5});window.__lenis=lenis;
+if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0)}else{function r(t){lenis.raf(t);requestAnimationFrame(r)}requestAnimationFrame(r)}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var t=document.querySelector(id);if(!t)return;e.preventDefault();lenis.scrollTo(t,{offset:-60,duration:1.2})})})})();
 </script>
 
-<!-- Lenis -->
-<script>
-(function(){if(!window.Lenis||window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;var lenis=new Lenis({lerp:0.1,smoothWheel:true,smoothTouch:false,wheelMultiplier:1});if(window.gsap&&window.ScrollTrigger){gsap.registerPlugin(ScrollTrigger);lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(function(t){lenis.raf(t*1000)});gsap.ticker.lagSmoothing(0)}else{function r(t){lenis.raf(t);requestAnimationFrame(r)}requestAnimationFrame(r)}document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length<2)return;var t=document.querySelector(id);if(!t)return;e.preventDefault();lenis.scrollTo(t,{offset:-60,duration:1.0})})})})();
-</script>
-
-<!-- THREE.JS HERO: GLSL flowing-red noise shader on a plane behind type -->
+<!-- SCROLLYTELLING: flowing red shader + chrome scissors centerpiece -->
 <script>
 (function(){
-  if(!window.THREE||window.innerWidth<=900)return;
-  var canvas=document.getElementById('heroCanvas');
-  if(!canvas)return;
+  if(!window.THREE||!window.gsap||!window.ScrollTrigger)return;
+  var canvas=document.getElementById('storyCanvas');
+  if(!canvas||window.innerWidth<=900)return;
+
   var W=canvas.offsetWidth,H=canvas.offsetHeight;
-  var renderer=new THREE.WebGLRenderer({canvas:canvas,alpha:true,antialias:false});
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.5));
   renderer.setSize(W,H);
+  renderer.shadowMap.enabled=true;
+  renderer.shadowMap.type=THREE.PCFSoftShadowMap;
   var scene=new THREE.Scene();
-  var camera=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+  var camera=new THREE.PerspectiveCamera(50,W/H,0.1,200);
+  camera.position.set(0,2,18);
 
-  var heroVisible=true;
+  // BACKGROUND: flowing red noise shader (ortho quad)
+  var bgScene=new THREE.Scene();
+  var bgCam=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+  var bgMat=new THREE.ShaderMaterial({
+    uniforms:{uTime:{value:0},uMouse:{value:new THREE.Vector2(0,0)}},
+    vertexShader:'varying vec2 vUv;void main(){vUv=uv;gl_Position=vec4(position,1.0);}',
+    fragmentShader:`precision highp float;uniform float uTime;uniform vec2 uMouse;varying vec2 vUv;
+vec2 hash22(vec2 p){p=vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3)));return -1.0+2.0*fract(sin(p)*43758.5453);}
+float noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);vec2 u=f*f*(3.0-2.0*f);return mix(mix(dot(hash22(i),f),dot(hash22(i+vec2(1,0)),f-vec2(1,0)),u.x),mix(dot(hash22(i+vec2(0,1)),f-vec2(0,1)),dot(hash22(i+vec2(1,1)),f-vec2(1,1)),u.x),u.y);}
+float fbm(vec2 p){float v=0.0;float a=0.5;for(int i=0;i<5;i++){v+=a*noise(p);p*=2.0;a*=0.5;}return v;}
+void main(){vec2 uv=vUv;vec2 p=uv*3.0;p.x+=uTime*0.06;p.y+=uTime*0.03;p+=uMouse*0.4;float n=fbm(p);float n2=fbm(p*1.8+vec2(uTime*0.04,0.0));float v=n*0.7+n2*0.4;
+vec3 c1=vec3(0.10,0.07,0.05);vec3 c2=vec3(0.55,0.13,0.10);vec3 c3=vec3(0.91,0.30,0.23);
+vec3 col=mix(c1,c2,smoothstep(0.0,0.6,v));col=mix(col,c3,smoothstep(0.55,1.0,v)*0.6);
+float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,1.0);}`
+  });
+  bgScene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2),bgMat));
+
+  // LIGHTING
+  var keyLight=new THREE.DirectionalLight(0xFFE0D0,1.4);
+  keyLight.position.set(8,12,8);keyLight.castShadow=true;
+  keyLight.shadow.mapSize.width=1024;keyLight.shadow.mapSize.height=1024;
+  keyLight.shadow.camera.left=-12;keyLight.shadow.camera.right=12;keyLight.shadow.camera.top=12;keyLight.shadow.camera.bottom=-12;
+  scene.add(keyLight);
+  scene.add(new THREE.AmbientLight(0x6B2418,0.4));
+  scene.add(new THREE.DirectionalLight(0xE74C3C,0.5)).position.set(-8,4,-6);
+
+  // CHROME SCISSORS — two blades that rotate against each other
+  var scissorsGroup=new THREE.Group();
+  var chromeMat=new THREE.MeshStandardMaterial({color:0xDDDDDD,roughness:0.15,metalness:1.0});
+  var redMat=new THREE.MeshStandardMaterial({color:0xC0392B,roughness:0.4,metalness:0.5});
+  // Two blade shapes (simplified as elongated boxes)
+  var bladeA=new THREE.Mesh(new THREE.BoxGeometry(0.4,5,0.12),chromeMat);bladeA.position.set(0.15,0,0);bladeA.castShadow=true;scissorsGroup.add(bladeA);
+  var bladeB=new THREE.Mesh(new THREE.BoxGeometry(0.4,5,0.12),chromeMat);bladeB.position.set(-0.15,0,0);bladeB.castShadow=true;scissorsGroup.add(bladeB);
+  // Handles (loops at the bottom)
+  var handleAB=new THREE.Mesh(new THREE.TorusGeometry(0.9,0.2,8,24),redMat);handleAB.position.set(0.4,-3.2,0);handleAB.castShadow=true;scissorsGroup.add(handleAB);
+  var handleBA=new THREE.Mesh(new THREE.TorusGeometry(0.9,0.2,8,24),redMat);handleBA.position.set(-0.4,-3.2,0);handleBA.castShadow=true;scissorsGroup.add(handleBA);
+  // Pivot
+  var pivot=new THREE.Mesh(new THREE.CylinderGeometry(0.25,0.25,0.4,16),chromeMat);pivot.rotation.x=Math.PI/2;pivot.position.set(0,-1.5,0);pivot.castShadow=true;scissorsGroup.add(pivot);
+  scissorsGroup.position.set(0,2,0);
+  scissorsGroup.visible=false;
+  scene.add(scissorsGroup);
+
+  // Floating particles
+  var DUST=140;var dpos=new Float32Array(DUST*3);var dvel=[];
+  for(var i=0;i<DUST;i++){dpos[i*3]=(Math.random()-.5)*40;dpos[i*3+1]=(Math.random()-.5)*30;dpos[i*3+2]=(Math.random()-.5)*20;dvel.push({x:(Math.random()-.5)*.02,y:.01+Math.random()*.014,z:(Math.random()-.5)*.012})}
+  var dgeo=new THREE.BufferGeometry();dgeo.setAttribute('position',new THREE.BufferAttribute(dpos,3));
+  scene.add(new THREE.Points(dgeo,new THREE.PointsMaterial({color:0xE74C3C,size:0.5,transparent:true,opacity:0.45,sizeAttenuation:true})));
+
+  var state={camX:0,camY:2,camZ:18,lookX:0,lookY:0,lookZ:0,scissorsVis:0};
+
+  var tl=gsap.timeline({defaults:{ease:'power3.inOut'},scrollTrigger:{trigger:'.story',start:'top top',end:'bottom bottom',scrub:1.2,pin:'.story-pin',anticipatePin:1,fastScrollEnd:true,
+    onUpdate:function(self){var idx=Math.min(5,Math.floor(self.progress*6));document.querySelectorAll('.beat').forEach(function(b,i){b.classList.toggle('in',i===idx)});document.querySelectorAll('.brail-dot').forEach(function(d,i){d.classList.toggle('active',i===idx)})}}});
+
+  tl.to(state,{camX:-3,camY:3,camZ:20,lookX:-1,duration:1.3},0)
+    .to(state,{camX:4,camY:0,camZ:14,lookX:1,lookY:1,scissorsVis:1,duration:1.5},'>-0.2')
+    .to(state,{camX:0,camY:-1,camZ:10,lookX:0,lookY:1,duration:1.5},'>-0.2')
+    .to(state,{camX:-4,camY:3,camZ:16,lookX:0,lookY:0,duration:1.5},'>-0.2')
+    .to(state,{camX:5,camY:1,camZ:14,lookX:0,lookY:1,duration:1.5},'>-0.2')
+    .to(state,{camX:0,camY:3,camZ:22,lookX:0,lookY:0,duration:1.5},'>-0.3');
+
+  var clock=new THREE.Clock();var heroVisible=true;
   if('IntersectionObserver' in window){new IntersectionObserver(function(e){heroVisible=e[0].isIntersecting},{threshold:0.01}).observe(canvas)}
+  window.addEventListener('resize',function(){if(window.innerWidth<=900)return;W=canvas.offsetWidth;H=canvas.offsetHeight;renderer.setSize(W,H);camera.aspect=W/H;camera.updateProjectionMatrix()},{passive:true});
 
-  // Full-screen quad with flowing noise shader
-  var geo=new THREE.PlaneGeometry(2,2);
-  var mat=new THREE.ShaderMaterial({
-    uniforms:{
-      uTime:{value:0},
-      uMouse:{value:new THREE.Vector2(0,0)},
-      uRes:{value:new THREE.Vector2(W,H)}
-    },
-    vertexShader:`
-      varying vec2 vUv;
-      void main(){vUv=uv;gl_Position=vec4(position,1.0);}
-    `,
-    fragmentShader:`
-      precision highp float;
-      uniform float uTime;
-      uniform vec2 uMouse;
-      uniform vec2 uRes;
-      varying vec2 vUv;
-      // 2D hash + noise (classic)
-      vec2 hash22(vec2 p){p=vec2(dot(p,vec2(127.1,311.7)),dot(p,vec2(269.5,183.3)));return -1.0+2.0*fract(sin(p)*43758.5453123);}
-      float noise(vec2 p){
-        vec2 i=floor(p);vec2 f=fract(p);
-        vec2 u=f*f*(3.0-2.0*f);
-        return mix(mix(dot(hash22(i+vec2(0,0)),f-vec2(0,0)),dot(hash22(i+vec2(1,0)),f-vec2(1,0)),u.x),
-                   mix(dot(hash22(i+vec2(0,1)),f-vec2(0,1)),dot(hash22(i+vec2(1,1)),f-vec2(1,1)),u.x),u.y);
-      }
-      // Fractal Brownian Motion
-      float fbm(vec2 p){
-        float v=0.0;float a=0.5;
-        for(int i=0;i<5;i++){v+=a*noise(p);p*=2.0;a*=0.5;}
-        return v;
-      }
-      void main(){
-        vec2 uv=vUv;
-        vec2 p=uv*3.0;
-        p.x+=uTime*0.06;
-        p.y+=uTime*0.03;
-        // Mouse warps the field slightly
-        p+=uMouse*0.4;
-        float n=fbm(p);
-        float n2=fbm(p*1.8+vec2(uTime*0.04,0.0));
-        float v=n*0.7+n2*0.4;
-        // Map to red-ish ink colors
-        vec3 c1=vec3(0.10,0.07,0.05);   // dark base
-        vec3 c2=vec3(0.55,0.13,0.10);   // deep red
-        vec3 c3=vec3(0.91,0.30,0.23);   // bright red
-        vec3 col=mix(c1,c2,smoothstep(0.0,0.6,v));
-        col=mix(col,c3,smoothstep(0.55,1.0,v)*0.6);
-        // Subtle vignette
-        float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);
-        col*=vig;
-        gl_FragColor=vec4(col,1.0);
-      }
-    `
-  });
-  scene.add(new THREE.Mesh(geo,mat));
-
-  var tmx=0,tmy=0,cmx=0,cmy=0;
-  document.addEventListener('mousemove',function(e){
-    var hero=document.querySelector('.hero');var r=hero.getBoundingClientRect();
-    if(e.clientY>r.bottom)return;
-    tmx=(e.clientX/window.innerWidth)*2-1;
-    tmy=-((e.clientY/window.innerHeight)*2-1);
-  });
-  window.addEventListener('resize',function(){
-    if(window.innerWidth<=900)return;
-    W=canvas.offsetWidth;H=canvas.offsetHeight;
-    renderer.setSize(W,H);mat.uniforms.uRes.value.set(W,H);
-  },{passive:true});
-
-  (function loop(t){
-    requestAnimationFrame(loop);
+  function render(){
+    requestAnimationFrame(render);
     if(!heroVisible)return;
-    cmx+=(tmx-cmx)*.05;cmy+=(tmy-cmy)*.05;
-    mat.uniforms.uTime.value=(t||0)*0.001;
-    mat.uniforms.uMouse.value.set(cmx,cmy);
+    var t=clock.getElapsedTime();
+    bgMat.uniforms.uTime.value=t;
+    // Render bg first (full screen), then 3D on top
+    renderer.autoClear=true;renderer.render(bgScene,bgCam);renderer.autoClear=false;
+    scissorsGroup.visible=state.scissorsVis>0.05;
+    scissorsGroup.scale.setScalar(state.scissorsVis);
+    scissorsGroup.rotation.y=t*0.4;
+    // Scissor "snip" motion: rotate the two blades alternately
+    var snip=Math.sin(t*2)*0.15;
+    scissorsGroup.children[0].rotation.z=snip;
+    scissorsGroup.children[1].rotation.z=-snip;
+    scissorsGroup.children[2].rotation.z=snip;
+    scissorsGroup.children[3].rotation.z=-snip;
+    var p=dgeo.attributes.position.array;
+    for(var i=0;i<DUST;i++){p[i*3]+=dvel[i].x;p[i*3+1]+=dvel[i].y;p[i*3+2]+=dvel[i].z;if(p[i*3+1]>15)p[i*3+1]=-15;if(p[i*3]>20)p[i*3]=-20;if(p[i*3]<-20)p[i*3]=20}
+    dgeo.attributes.position.needsUpdate=true;
+    camera.position.set(state.camX,state.camY,state.camZ);camera.lookAt(state.lookX,state.lookY,state.lookZ);
     renderer.render(scene,camera);
-  })();
+  }
+  render();
+
+  document.querySelectorAll('.brail-dot').forEach(function(d){d.addEventListener('click',function(){var beat=parseInt(d.dataset.beat,10);var story=document.querySelector('.story');var rect=story.getBoundingClientRect();var pageTop=window.scrollY+rect.top;var sectionH=story.offsetHeight-window.innerHeight;var targetY=pageTop+sectionH*(beat/5.5);if(window.__lenis){window.__lenis.scrollTo(targetY,{duration:1.2})}else{window.scrollTo({top:targetY,behavior:'smooth'})}})});
 })();
 </script>
 
-<!-- SIGNATURE MICRO: massive name tilts/floats based on mouse position -->
-<script>
-(function(){
-  var name=document.getElementById('heroName');
-  if(!name||window.matchMedia('(pointer:coarse)').matches)return;
-  var raf=0,tx=0,ty=0,cx=0,cy=0;
-  document.addEventListener('mousemove',function(e){
-    var h=document.querySelector('.hero');var r=h.getBoundingClientRect();
-    if(e.clientY>r.bottom)return;
-    tx=((e.clientX/window.innerWidth)-.5)*40;
-    ty=((e.clientY/window.innerHeight)-.5)*20;
-  });
-  (function loop(){
-    cx+=(tx-cx)*.06;cy+=(ty-cy)*.06;
-    name.style.transform='translate(calc(-50% + '+cx+'px),calc(-50% + '+cy+'px))';
-    requestAnimationFrame(loop);
-  })();
-})();
-</script>
-
-<!-- PORTFOLIO: vertical peel-stack as you scroll past the section -->
+<!-- Peel-stack portfolio -->
 <script>
 (function(){
   if(!window.gsap||!window.ScrollTrigger||window.innerWidth<=900)return;
-  var stage=document.querySelector('.portfolio-stage');
+  var stage=document.querySelector('.portfolio-stage');var section=document.querySelector('.portfolio-section');
   var cards=document.querySelectorAll('.pstack-card');
-  if(!stage||!cards.length)return;
-  var section=document.querySelector('.portfolio-section');
-  // Pin the stage; on scroll, top card peels up to reveal next
-  ScrollTrigger.create({
-    trigger:section,
-    start:'top top',
-    end:'+='+(cards.length*window.innerHeight*0.7),
-    pin:'.portfolio-stage',
-    anticipatePin:1,
-    scrub:0.4,
-    fastScrollEnd:true,
+  if(!stage||!cards.length||!section)return;
+  ScrollTrigger.create({trigger:section,start:'top top',end:'+='+(cards.length*window.innerHeight*0.7),pin:'.portfolio-stage',anticipatePin:1,scrub:0.4,fastScrollEnd:true,
     onUpdate:function(self){
       var prog=self.progress*cards.length;
       cards.forEach(function(c,i){
         var local=prog-i;
-        if(local<0){
-          // Hasn't been reached yet — sit underneath
-          c.style.transform='translateX(-50%) translateY(0px) scale('+(1-i*0.04)+')';
-          c.style.opacity=(1-Math.min(i*0.25,0.7));
-          c.style.zIndex=cards.length-i;
-        }else if(local<1){
-          // Currently peeling up
-          var off=-local*120;
-          var rot=-local*8;
-          c.style.transform='translateX(-50%) translateY('+off+'vh) rotate('+rot+'deg)';
-          c.style.opacity=1-local*0.6;
-          c.style.zIndex=cards.length-i;
-        }else{
-          // Already peeled away
-          c.style.transform='translateX(-50%) translateY(-130vh)';
-          c.style.opacity=0;
-          c.style.zIndex=cards.length-i;
-        }
+        if(local<0){c.style.transform='translateX(-50%) translateY(0px) scale('+(1-i*0.04)+')';c.style.opacity=(1-Math.min(i*0.25,0.7));c.style.zIndex=cards.length-i}
+        else if(local<1){var off=-local*120;var rot=-local*8;c.style.transform='translateX(-50%) translateY('+off+'vh) rotate('+rot+'deg)';c.style.opacity=1-local*0.6;c.style.zIndex=cards.length-i}
+        else{c.style.transform='translateX(-50%) translateY(-130vh)';c.style.opacity=0;c.style.zIndex=cards.length-i}
       });
     }
   });
+  document.querySelectorAll('.pstack-bg').forEach(function(bg){var url=(bg.style.backgroundImage||'').replace(/^url\(["']?/,'').replace(/["']?\)$/,'');if(!url)return;var img=new Image();img.onerror=function(){bg.style.display='none';var fb=bg.parentNode.querySelector('.pstack-fallback');if(fb)fb.style.display='flex'};img.src=url});
 })();
 </script>
 
-<!-- VERTICAL TIMELINE step reveal -->
 <script>
 (function(){
   if(!window.gsap||!window.ScrollTrigger)return;
-  document.querySelectorAll('.vtl-step').forEach(function(s,i){
-    gsap.fromTo(s,{x:-30,opacity:0},{x:0,opacity:1,duration:.7,delay:i*0.12,ease:'power2.out',scrollTrigger:{trigger:s,start:'top 85%',once:true,onEnter:function(){s.classList.add('in')}}});
-  });
+  function split(el){if(el.dataset.splitDone)return;el.dataset.splitDone='1';function proc(n){if(n.nodeType===3){var f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(function(w){if(/^\s+$/.test(w)){f.appendChild(document.createTextNode(w));return}var ws=document.createElement('span');ws.style.display='inline-block';ws.style.whiteSpace='nowrap';for(var i=0;i<w.length;i++){var s=document.createElement('span');s.style.display='inline-block';s.style.transform='translateY(110%)';s.style.opacity='0';s.style.transition='transform .9s cubic-bezier(.22,1,.36,1),opacity .8s ease';s.textContent=w[i];ws.appendChild(s)}f.appendChild(ws)});n.parentNode.replaceChild(f,n)}else if(n.nodeType===1){Array.from(n.childNodes).forEach(proc)}}Array.from(el.childNodes).forEach(proc);var chars=el.querySelectorAll('span > span');ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){chars.forEach(function(c,i){setTimeout(function(){c.style.transform='translateY(0)';c.style.opacity='1'},i*15)})}})}
+  document.querySelectorAll('[data-split]').forEach(split);
   gsap.utils.toArray('.svc-card').forEach(function(c){gsap.fromTo(c,{y:24,opacity:0},{y:0,opacity:1,duration:.8,ease:'power3.out',scrollTrigger:{trigger:c,start:'top 90%',once:true}})});
   gsap.utils.toArray('.rev-card').forEach(function(c,i){gsap.fromTo(c,{y:24,opacity:0},{y:0,opacity:1,duration:.7,delay:i*0.1,ease:'power2.out',scrollTrigger:{trigger:'.reviews-grid',start:'top 80%',once:true}})});
-  gsap.utils.toArray('.hour-row').forEach(function(c,i){gsap.fromTo(c,{x:-15,opacity:0},{x:0,opacity:1,duration:.5,delay:i*0.08,ease:'power1.out',scrollTrigger:{trigger:'.hours-list',start:'top 85%',once:true}})});
 })();
-</script>
+(function(){if(window.matchMedia('(pointer:coarse)').matches)return;function bind(el){var inner=el.querySelector('.magnetic-inner');if(!inner){var s=document.createElement('span');s.className='magnetic-inner';while(el.firstChild)s.appendChild(el.firstChild);el.appendChild(s);inner=s}var raf=0,tx=0,ty=0;function apply(){raf=0;el.style.transform='translate('+(tx*.3)+'px,'+(ty*.3)+'px)';inner.style.transform='translate('+(tx*.5)+'px,'+(ty*.5)+'px)'}el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();tx=e.clientX-r.left-r.width/2;ty=e.clientY-r.top-r.height/2;if(!raf)raf=requestAnimationFrame(apply)});el.addEventListener('mouseleave',function(){if(raf){cancelAnimationFrame(raf);raf=0}el.style.transform='';inner.style.transform=''})}document.querySelectorAll('.magnetic').forEach(bind)})();
 
-<!-- SPLIT TEXT -->
-<script>
-(function(){
-  if(!window.gsap||!window.ScrollTrigger)return;
-  function split(el){
-    if(el.dataset.splitDone)return;
-    el.dataset.splitDone='1';
-    function proc(n){
-      if(n.nodeType===3){
-        var f=document.createDocumentFragment();
-        n.textContent.split(/(\s+)/).forEach(function(w){
-          if(/^\s+$/.test(w)){f.appendChild(document.createTextNode(w));return}
-          var ws=document.createElement('span');ws.className='split-word';
-          for(var i=0;i<w.length;i++){var s=document.createElement('span');s.className='split-char';s.textContent=w[i];ws.appendChild(s)}
-          f.appendChild(ws);
-        });
-        n.parentNode.replaceChild(f,n);
-      }else if(n.nodeType===1){Array.from(n.childNodes).forEach(proc)}
-    }
-    Array.from(el.childNodes).forEach(proc);
-    var chars=el.querySelectorAll('.split-char');
-    ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:function(){chars.forEach(function(c,i){setTimeout(function(){c.classList.add('in')},i*15)})}});
-  }
-  document.querySelectorAll('[data-split]').forEach(split);
-})();
-</script>
-
-<!-- MAGNETIC -->
-<script>
-(function(){
-  if(window.matchMedia('(pointer:coarse)').matches)return;
-  function bind(el){
-    var inner=el.querySelector('.magnetic-inner');
-    if(!inner){var s=document.createElement('span');s.className='magnetic-inner';while(el.firstChild)s.appendChild(el.firstChild);el.appendChild(s);inner=s}
-    var raf=0,tx=0,ty=0;
-    function apply(){raf=0;el.style.transform='translate('+(tx*.3)+'px,'+(ty*.3)+'px)';inner.style.transform='translate('+(tx*.5)+'px,'+(ty*.5)+'px)'}
-    el.addEventListener('mousemove',function(e){var r=el.getBoundingClientRect();tx=e.clientX-r.left-r.width/2;ty=e.clientY-r.top-r.height/2;if(!raf)raf=requestAnimationFrame(apply)});
-    el.addEventListener('mouseleave',function(){if(raf){cancelAnimationFrame(raf);raf=0}el.style.transform='';inner.style.transform=''});
-  }
-  document.querySelectorAll('.magnetic').forEach(bind);
-})();
-</script>
-
-<!-- Image fallback for portfolio -->
-<script>
-(function(){
-  document.querySelectorAll('.pstack-bg').forEach(function(bg){
-    var url=(bg.style.backgroundImage||'').replace(/^url\(["']?/,'').replace(/["']?\)$/,'');
-    if(!url)return;
-    var img=new Image();
-    img.onerror=function(){bg.style.display='none';var fb=bg.parentNode.querySelector('.pstack-fallback');if(fb)fb.style.display='flex'};
-    img.src=url;
-  });
-})();
-</script>
-
-<!-- BILINGUAL TOGGLE -->
-<script>
+/* BILINGUAL TOGGLE */
 (function(){
   var i18n={
-    en:{
-      // Nav
-      navsvc:'Services',navwork:'Work',navvisit:'Visit',navrev:'Reviews',book:'Book Now',
-      // Hero
-      herotag:'St. Charles, MO · 5.0 Stars · 66 Reviews',
-      ratinglabel:'Perfect Google Rating',
-      claim:'The Art <em>of the Cut.</em>',
-      sub:'Expert grooming for kids, teens, and gentlemen in a welcoming bilingual environment. St. Charles\'s top-rated barbershop — walk-ins always welcome.',
-      cta1:'Call to Book',cta2:'View Services',
-      stat1:'Happy Customers',stat2:'Days a Week',stat3:'Starting Price',stat3num:'$10+',
-      // Services
+    en:{navsvc:'Services',navwork:'Work',navrev:'Reviews',navbook:'Book',book:'Book Now',
+      herotag:'St. Charles, MO · 5.0 Stars · 66 Reviews',claim:'The Art<em>of the Cut.</em>',
+      sub:'Expert grooming for kids, teens, and gentlemen in a welcoming bilingual environment. St. Charles\\'s top-rated barbershop — walk-ins always welcome.',
+      cta1:'Call to Book',cta2:'Book Online',
+      b2tag:'Meet The Crew',b2h:'Maria &amp;<em>Bryan.</em>',b2sub:'Two artists with different specialties. Tell them your idea, show them a reference, or just say "the usual." They\\'ll remember.',b2stat1:'Perfect Rating',b2stat2:'Days a Week',
+      b3tag:'The Cut',b3h:'Sharp Lines.<em>Hot Towel Finish.</em>',b3sub:'Real chair, real conversation, real razor finish. Cuts take 25-40 minutes done properly. Straight razor finish on every fade.',
+      b4tag:'What We Do',b4h:'Six Ways to<em>Look Fresh.</em>',b4sub:'Classic cuts, kids\\' cuts, beard trims, fades, line-ups, full combos. All ages, all welcome. Hablamos español.',b4cta:'View Services',
+      b5tag:'All Welcome',b5h:'Open Late.<em>Bilingual.</em>',b5sub:'Open Monday through Saturday 10-8, Sunday 10-4. Bilingual barbers — call in English or Spanish. Walk in or call ahead.',
+      b6tag:'Ready to Book?',b6h:'Call Today.',b6cta1:'Call',b6cta2:'Book Online',
       eyebsvc:'What We Offer',titlesvc:'Our <em>Services</em>',
       svc1n:'Classic Haircut',svc1d:'Precision cuts tailored to your style. We listen, we execute, you leave looking sharp every single time.',
-      svc2n:'Kids\' Cuts',svc2d:'Patient, fun service for kids of all ages. We make it comfortable and enjoyable — even for the squirmy ones.',
-      svc3n:'Beard Trim',svc3d:'Shape, define, and clean up your beard with expert precision. Straight razor finish available.',
-      svc4n:'Fade & Taper',svc4d:'Clean fades from skin to any length. Mid fades, high fades, tapers — we do them all with precision.',
-      svc5n:'Line-Up',svc5d:'Sharp edges, clean lines. The perfect finishing touch to keep your style looking fresh between cuts.',
-      svc6n:'Cut & Beard Combo',svc6d:'The full treatment. Haircut and beard trim together — walk out looking completely transformed.',
-      // Portfolio
-      eyebpf:'Recent Work',titlepf:'El <em>Portfolio.</em>',
-      pfsub:'Cada corte cuenta una historia — every cut tells a story. Scroll to flip through recent visits from our regulars.',
-      // Process
-      eyebproc:'How a Visit Works · Cómo Funciona',titleproc:'El <em>Proceso.</em>',
-      step1t:'Walk In or<em>Call Ahead.</em>',
-      step1d:'No appointment needed. Just stop by at <strong>327 Droste Rd</strong> during open hours — or call <strong>(314) 299-0816</strong> to lock in a time. We speak English and Spanish.',
-      step2t:'Tell Us<em>What You Want.</em>',
-      step2d:'Bring a reference photo, describe it, or say "the usual." Maria or Bryan will confirm what you want before any clippers touch your head. Honest opinions if asked.',
-      step3t:'Sit, Relax,<em>Get Sharp.</em>',
-      step3d:'Real chair, real conversation. Cuts take 25-40 minutes done properly. Straight razor finish on every fade. Music or sports on the TV.',
-      step4t:'Walk Out<em>Looking Fresh.</em>',
-      step4d:'Hot towel finish, clean lines, looking sharp. Tip what feels right. We\'ll remember your style for next time — that\'s the difference.',
-      // Reviews
+      svc2n:'Kids\\' Cuts',svc2d:'Patient, fun service for kids of all ages. Even the squirmy ones.',
+      svc3n:'Beard Trim',svc3d:'Shape, define, clean up. Straight razor finish available.',
+      svc4n:'Fade &amp; Taper',svc4d:'Clean fades from skin to any length. Done with precision.',
+      svc5n:'Line-Up',svc5d:'Sharp edges, clean lines. Keep your style fresh between cuts.',
+      svc6n:'Cut &amp; Beard Combo',svc6d:'The full treatment. Walk out completely transformed.',
+      eyebpf:'Recent Work',titlepf:'El <em>Portafolio.</em>',pfsub:'Cada corte cuenta una historia. Scroll to flip through recent visits from our regulars.',
       eyebrev:'What Clients Say',titlerev:'Real <em>Reviews.</em>',
-      // Hours + location
-      eyebfind:'Find Us',titlefind:'Hours &amp; <em>Location.</em>',
-      day1:'Monday – Friday',day2:'Saturday',day3:'Sunday',
-      eyebaddr:'Address',eyebphone:'Phone · Bilingual',
-      // Booking
+      eyebfind:'Find Us',titlefind:'Hours &amp; <em>Location.</em>',day1:'Monday – Friday',day2:'Saturday',day3:'Sunday',eyebaddr:'Address',eyebphone:'Phone · Bilingual',
       eyebbook:'Book Online',titlebook:'Reserve Your <em>Chair.</em>',
-      bookp:'Tell us what you need and when. We\'ll call to confirm. Prefer to talk? <a href="tel:3142990816">(314) 299-0816</a> rings straight through. Hablamos español.',
-      bookbadge:'✦ Open 7 Days · Walk-Ins Welcome',
+      bookp:'Tell us what you need and when. We\\'ll call to confirm. Prefer to talk? <a href="tel:3142990816">(314) 299-0816</a> rings straight through. Hablamos español.',
       formsend:'Send Request',
-      // CTA
-      ctah:'Ready to Look<br>Your Best?',
-      ctap:'Walk in or call ahead. La Barbería is open 7 days a week — we\'ll make sure you leave looking and feeling great.',
-      ctabtn:'Book Your Visit'
+      ctah:'Ready to Look<br>Your Best?',ctap:'Walk in or call ahead. La Barbería is open 7 days a week — we\\'ll make sure you leave looking and feeling great.',ctabtn:'Book Your Visit'
     },
-    es:{
-      // Nav
-      navsvc:'Servicios',navwork:'Cortes',navvisit:'Visita',navrev:'Reseñas',book:'Reservar',
-      // Hero
-      herotag:'St. Charles, MO · 5.0 Estrellas · 66 Reseñas',
-      ratinglabel:'Calificación Google Perfecta',
-      claim:'El Arte <em>del Corte.</em>',
+    es:{navsvc:'Servicios',navwork:'Cortes',navrev:'Reseñas',navbook:'Reservar',book:'Reservar',
+      herotag:'St. Charles, MO · 5.0 Estrellas · 66 Reseñas',claim:'El Arte<em>del Corte.</em>',
       sub:'Cortes expertos para niños, jóvenes y caballeros en un ambiente acogedor y bilingüe. La barbería mejor calificada de St. Charles — sin cita previa.',
-      cta1:'Llama para Reservar',cta2:'Ver Servicios',
-      stat1:'Clientes Felices',stat2:'Días a la Semana',stat3:'Precio Inicial',stat3num:'$10+',
-      // Servicios
+      cta1:'Llama para Reservar',cta2:'Reserva Online',
+      b2tag:'Conoce al Equipo',b2h:'Maria y<em>Bryan.</em>',b2sub:'Dos artistas con diferentes especialidades. Diles tu idea, muéstrales una foto, o di "lo de siempre." Lo recordarán.',b2stat1:'Calificación Perfecta',b2stat2:'Días a la Semana',
+      b3tag:'El Corte',b3h:'Líneas Definidas.<em>Toalla Caliente.</em>',b3sub:'Silla cómoda, buena conversación, acabado con navaja recta. Los cortes toman 25-40 minutos bien hechos.',
+      b4tag:'Lo Que Hacemos',b4h:'Seis Formas de<em>Lucir Fresco.</em>',b4sub:'Cortes clásicos, niños, barba, fades, delineados, combo completo. Todas las edades. Hablamos español.',b4cta:'Ver Servicios',
+      b5tag:'Todos Bienvenidos',b5h:'Abierto Hasta Tarde.<em>Bilingüe.</em>',b5sub:'Abierto de Lunes a Sábado 10-8, Domingo 10-4. Barberos bilingües — llama en inglés o español. Pasa o llama antes.',
+      b6tag:'¿Listo para Reservar?',b6h:'Llama Hoy.',b6cta1:'Llamar',b6cta2:'Reservar',
       eyebsvc:'Lo Que Ofrecemos',titlesvc:'Nuestros <em>Servicios</em>',
       svc1n:'Corte Clásico',svc1d:'Cortes precisos hechos a tu estilo. Escuchamos, ejecutamos, y sales luciendo impecable cada vez.',
-      svc2n:'Cortes Para Niños',svc2d:'Servicio paciente y divertido para niños de todas las edades. Lo hacemos cómodo y agradable — incluso para los más inquietos.',
-      svc3n:'Arreglo de Barba',svc3d:'Da forma, define, y limpia tu barba con precisión experta. Acabado con navaja recta disponible.',
-      svc4n:'Fade y Difuminado',svc4d:'Fades limpios desde piel hasta cualquier largo. Mid fades, high fades, tapers — todos con precisión.',
-      svc5n:'Delineado',svc5d:'Bordes definidos, líneas limpias. El toque final para mantener tu estilo fresco entre cortes.',
-      svc6n:'Corte + Barba Combo',svc6d:'El tratamiento completo. Corte y arreglo de barba juntos — sales completamente transformado.',
-      // Portafolio
-      eyebpf:'Trabajo Reciente',titlepf:'El <em>Portafolio.</em>',
-      pfsub:'Cada corte cuenta una historia. Desliza para ver visitas recientes de nuestros clientes habituales.',
-      // Proceso
-      eyebproc:'Cómo Funciona una Visita',titleproc:'El <em>Proceso.</em>',
-      step1t:'Llega o<em>Llama Antes.</em>',
-      step1d:'No necesitas cita. Pasa por <strong>327 Droste Rd</strong> durante horas de servicio — o llama al <strong>(314) 299-0816</strong> para asegurar tu hora. Hablamos inglés y español.',
-      step2t:'Dinos<em>Lo Que Quieres.</em>',
-      step2d:'Trae una foto de referencia, descríbelo, o di "lo de siempre." Maria o Bryan confirmarán lo que quieres antes de tocarte el cabello. Opiniones honestas si las pides.',
-      step3t:'Siéntate,<em>Relájate.</em>',
-      step3d:'Silla cómoda, buena conversación. Los cortes toman 25-40 minutos bien hechos. Acabado con navaja recta en cada fade. Música o deportes en la TV.',
-      step4t:'Sal<em>Luciendo Fresco.</em>',
-      step4d:'Acabado con toalla caliente, líneas limpias, luciendo impecable. Da la propina que te parezca justa. Recordaremos tu estilo para la próxima — esa es la diferencia.',
-      // Reseñas
+      svc2n:'Cortes Para Niños',svc2d:'Servicio paciente y divertido para niños de todas las edades. Incluso los más inquietos.',
+      svc3n:'Arreglo de Barba',svc3d:'Da forma, define, y limpia. Acabado con navaja recta disponible.',
+      svc4n:'Fade y Difuminado',svc4d:'Fades limpios desde piel hasta cualquier largo. Hecho con precisión.',
+      svc5n:'Delineado',svc5d:'Bordes definidos, líneas limpias. Mantén tu estilo fresco entre cortes.',
+      svc6n:'Corte + Barba Combo',svc6d:'El tratamiento completo. Sales completamente transformado.',
+      eyebpf:'Trabajo Reciente',titlepf:'El <em>Portafolio.</em>',pfsub:'Cada corte cuenta una historia. Desliza para ver visitas recientes.',
       eyebrev:'Lo Que Dicen Los Clientes',titlerev:'Reseñas <em>Reales.</em>',
-      // Horas + ubicación
-      eyebfind:'Encuéntranos',titlefind:'Horario &amp; <em>Ubicación.</em>',
-      day1:'Lunes – Viernes',day2:'Sábado',day3:'Domingo',
-      eyebaddr:'Dirección',eyebphone:'Teléfono · Bilingüe',
-      // Reserva
+      eyebfind:'Encuéntranos',titlefind:'Horario &amp; <em>Ubicación.</em>',day1:'Lunes – Viernes',day2:'Sábado',day3:'Domingo',eyebaddr:'Dirección',eyebphone:'Teléfono · Bilingüe',
       eyebbook:'Reserva Online',titlebook:'Reserva Tu <em>Silla.</em>',
       bookp:'Dinos lo que necesitas y cuándo. Te llamamos para confirmar. ¿Prefieres hablar? <a href="tel:3142990816">(314) 299-0816</a> contesta directamente. Hablamos español.',
-      bookbadge:'✦ Abierto 7 Días · Sin Cita Previa',
       formsend:'Enviar Solicitud',
-      // CTA
-      ctah:'¿Listo para Lucir<br>Tu Mejor Estilo?',
-      ctap:'Pasa o llama antes. La Barbería abre los 7 días — nos aseguraremos de que salgas luciendo y sintiéndote increíble.',
-      ctabtn:'Reserva Tu Visita'
+      ctah:'¿Listo para Lucir<br>Tu Mejor Estilo?',ctap:'Pasa o llama antes. La Barbería abre los 7 días — nos aseguraremos de que salgas luciendo increíble.',ctabtn:'Reserva Tu Visita'
     }
   };
-  var toggle=document.getElementById('langToggle');
-  if(!toggle)return;
-  function setLang(lang){
-    toggle.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang)});
-    document.documentElement.lang=lang;
-    var map=i18n[lang];
-    if(!map)return;
-    document.querySelectorAll('[data-i18n]').forEach(function(el){
-      var k=el.dataset.i18n;
-      if(map[k]!==undefined)el.innerHTML=map[k];
-    });
-  }
-  toggle.addEventListener('click',function(e){
-    var b=e.target.closest('button');
-    if(!b)return;
-    setLang(b.dataset.lang);
-  });
+  var toggle=document.getElementById('langToggle');if(!toggle)return;
+  function setLang(lang){toggle.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang)});document.documentElement.lang=lang;var map=i18n[lang];if(!map)return;document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.dataset.i18n;if(map[k]!==undefined)el.innerHTML=map[k]})}
+  toggle.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;setLang(b.dataset.lang)});
 })();
-</script>
-
-<!-- BOOKING FORM -->
-<script>
-(function(){
-  var form=document.getElementById('bookingForm'),success=document.getElementById('bookingSuccess');
-  if(!form)return;
-  form.addEventListener('submit',async function(e){
-    e.preventDefault();
-    var btn=form.querySelector('button[type=submit]');
-    var inner=btn.querySelector('.magnetic-inner')||btn;
-    var orig=inner.textContent;inner.textContent='Sending...';btn.disabled=true;
-    try{await fetch('/',{method:'POST',body:new FormData(form)});form.style.display='none';success.style.display='block'}
-    catch(err){inner.textContent=orig;btn.disabled=false;alert('Algo salió mal. Call (314) 299-0816.')}
-  });
-})();
+(function(){var form=document.getElementById('bookingForm');if(!form)return;form.addEventListener('submit',async function(e){e.preventDefault();var btn=form.querySelector('button[type=submit]');var inner=btn.querySelector('.magnetic-inner')||btn;var orig=inner.textContent;inner.textContent='Sending...';btn.disabled=true;try{await fetch('/',{method:'POST',body:new FormData(form)});alert('¡Got it! We\\'ll call within the hour.')}catch(err){inner.textContent=orig;btn.disabled=false;alert('Call (314) 299-0816.')}})})();
 </script>
 
 </body>
