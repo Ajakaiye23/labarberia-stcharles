@@ -501,9 +501,25 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener
   renderer.setSize(W,H);
   renderer.shadowMap.enabled=true;
   renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  if('outputColorSpace' in renderer){renderer.outputColorSpace=THREE.SRGBColorSpace}else{renderer.outputEncoding=THREE.sRGBEncoding}
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;
   var scene=new THREE.Scene();
   var camera=new THREE.PerspectiveCamera(50,W/H,0.1,200);
   camera.position.set(0,2,18);
+
+  // Env map so chrome scissors reflect realistically
+  (function(){
+    var c=document.createElement('canvas');c.width=32;c.height=256;var g=c.getContext('2d');
+    var gr=g.createLinearGradient(0,0,0,256);
+    gr.addColorStop(0,'#9aa4b0');gr.addColorStop(0.4,'#2a2024');gr.addColorStop(0.47,'#cdd4dc');
+    gr.addColorStop(0.54,'#1c1418');gr.addColorStop(0.8,'#241012');gr.addColorStop(1,'#0c0708');
+    g.fillStyle=gr;g.fillRect(0,0,32,256);
+    g.fillStyle='rgba(255,235,225,0.9)';g.fillRect(0,94,32,12);
+    g.fillStyle='rgba(231,76,60,0.5)';g.fillRect(0,150,32,10);
+    var tex=new THREE.CanvasTexture(c);tex.mapping=THREE.EquirectangularReflectionMapping;
+    var pm=new THREE.PMREMGenerator(renderer);pm.compileEquirectangularShader();
+    scene.environment=pm.fromEquirectangular(tex).texture;tex.dispose();pm.dispose();
+  })();
 
   // BACKGROUND: flowing red noise shader (ortho quad)
   var bgScene=new THREE.Scene();
@@ -533,18 +549,26 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
 
   // CHROME SCISSORS — two blades that rotate against each other
   var scissorsGroup=new THREE.Group();
-  var chromeMat=new THREE.MeshStandardMaterial({color:0xDDDDDD,roughness:0.15,metalness:1.0});
-  var redMat=new THREE.MeshStandardMaterial({color:0xC0392B,roughness:0.4,metalness:0.5});
-  // Two blade shapes (simplified as elongated boxes)
-  var bladeA=new THREE.Mesh(new THREE.BoxGeometry(0.4,5,0.12),chromeMat);bladeA.position.set(0.15,0,0);bladeA.castShadow=true;scissorsGroup.add(bladeA);
-  var bladeB=new THREE.Mesh(new THREE.BoxGeometry(0.4,5,0.12),chromeMat);bladeB.position.set(-0.15,0,0);bladeB.castShadow=true;scissorsGroup.add(bladeB);
-  // Handles (loops at the bottom)
-  var handleAB=new THREE.Mesh(new THREE.TorusGeometry(0.9,0.2,8,24),redMat);handleAB.position.set(0.4,-3.2,0);handleAB.castShadow=true;scissorsGroup.add(handleAB);
-  var handleBA=new THREE.Mesh(new THREE.TorusGeometry(0.9,0.2,8,24),redMat);handleBA.position.set(-0.4,-3.2,0);handleBA.castShadow=true;scissorsGroup.add(handleBA);
-  // Pivot
-  var pivot=new THREE.Mesh(new THREE.CylinderGeometry(0.25,0.25,0.4,16),chromeMat);pivot.rotation.x=Math.PI/2;pivot.position.set(0,-1.5,0);pivot.castShadow=true;scissorsGroup.add(pivot);
-  scissorsGroup.position.set(0,2,0);
-  scissorsGroup.visible=false;
+  var chromeMat=new THREE.MeshStandardMaterial({color:0xE2E7ED,roughness:0.1,metalness:1.0,envMapIntensity:1.7});
+  var redMat=new THREE.MeshStandardMaterial({color:0xC0392B,roughness:0.32,metalness:0.6,envMapIntensity:1.2,emissive:0x1a0503,emissiveIntensity:0.3});
+  // One half-blade = polished tapered blade (box body + pointed cone tip) on a pivoting arm
+  function makeBlade(side){
+    var g=new THREE.Group();
+    var body=new THREE.Mesh(new THREE.BoxGeometry(0.34,4.4,0.07),chromeMat);body.position.y=2.2;body.castShadow=true;g.add(body);
+    var edge=new THREE.Mesh(new THREE.BoxGeometry(0.08,4.4,0.09),chromeMat);edge.position.set(side*0.16,2.2,0);g.add(edge);
+    var tip=new THREE.Mesh(new THREE.ConeGeometry(0.18,1.0,4),chromeMat);tip.position.y=4.9;tip.rotation.y=Math.PI/4;tip.castShadow=true;g.add(tip);
+    // shank down to handle
+    var shank=new THREE.Mesh(new THREE.BoxGeometry(0.26,1.6,0.12),chromeMat);shank.position.y=-0.6;g.add(shank);
+    // red ergonomic handle loop
+    var loop=new THREE.Mesh(new THREE.TorusGeometry(0.82,0.2,14,28),redMat);loop.position.set(side*0.7,-2.1,0);loop.rotation.y=side*0.5;loop.castShadow=true;g.add(loop);
+    return g;
+  }
+  var bladeA=makeBlade(1);bladeA.position.set(0.12,0,0);scissorsGroup.add(bladeA);
+  var bladeB=makeBlade(-1);bladeB.position.set(-0.12,0,0);scissorsGroup.add(bladeB);
+  // Pivot screw
+  var pivot=new THREE.Mesh(new THREE.CylinderGeometry(0.26,0.26,0.5,20),chromeMat);pivot.rotation.x=Math.PI/2;pivot.position.set(0,0.3,0);pivot.castShadow=true;scissorsGroup.add(pivot);
+  var pivotHead=new THREE.Mesh(new THREE.CylinderGeometry(0.34,0.34,0.12,20),redMat);pivotHead.rotation.x=Math.PI/2;pivotHead.position.set(0,0.3,0.3);scissorsGroup.add(pivotHead);
+  scissorsGroup.position.set(5,-2.6,0);
   scene.add(scissorsGroup);
 
   // Floating particles
@@ -553,7 +577,7 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
   var dgeo=new THREE.BufferGeometry();dgeo.setAttribute('position',new THREE.BufferAttribute(dpos,3));
   scene.add(new THREE.Points(dgeo,new THREE.PointsMaterial({color:0xE74C3C,size:0.5,transparent:true,opacity:0.45,sizeAttenuation:true})));
 
-  var state={camX:0,camY:2,camZ:18,lookX:0,lookY:0,lookZ:0,scissorsVis:0};
+  var state={camX:0,camY:2,camZ:18,lookX:0,lookY:0,lookZ:0,scissorsVis:1};
 
   var tl=gsap.timeline({defaults:{ease:'power3.inOut'},scrollTrigger:{trigger:'.story',start:'top top',end:'bottom bottom',scrub:1.2,pin:'.story-pin',anticipatePin:1,fastScrollEnd:true,
     onUpdate:function(self){var idx=Math.min(5,Math.floor(self.progress*6));document.querySelectorAll('.beat').forEach(function(b,i){b.classList.toggle('in',i===idx)});document.querySelectorAll('.brail-dot').forEach(function(d,i){d.classList.toggle('active',i===idx)})}}});
@@ -577,18 +601,18 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
     // Render bg first (full screen), then 3D on top
     renderer.autoClear=true;renderer.render(bgScene,bgCam);renderer.autoClear=false;
     scissorsGroup.visible=state.scissorsVis>0.05;
-    scissorsGroup.scale.setScalar(state.scissorsVis);
-    scissorsGroup.rotation.y=t*0.4;
-    // Scissor "snip" motion: rotate the two blades alternately
-    var snip=Math.sin(t*2)*0.15;
-    scissorsGroup.children[0].rotation.z=snip;
-    scissorsGroup.children[1].rotation.z=-snip;
-    scissorsGroup.children[2].rotation.z=snip;
-    scissorsGroup.children[3].rotation.z=-snip;
+    scissorsGroup.scale.setScalar(state.scissorsVis*1.25);
+    scissorsGroup.rotation.y=0.5+Math.sin(t*0.3)*0.5;
+    scissorsGroup.rotation.z=-0.42;
+    // Scissor "snip": open & close the two blades around the pivot screw
+    var snip=Math.abs(Math.sin(t*1.6))*0.2;
+    bladeA.rotation.z=-0.12-snip;
+    bladeB.rotation.z=0.12+snip;
     var p=dgeo.attributes.position.array;
     for(var i=0;i<DUST;i++){p[i*3]+=dvel[i].x;p[i*3+1]+=dvel[i].y;p[i*3+2]+=dvel[i].z;if(p[i*3+1]>15)p[i*3+1]=-15;if(p[i*3]>20)p[i*3]=-20;if(p[i*3]<-20)p[i*3]=20}
     dgeo.attributes.position.needsUpdate=true;
     camera.position.set(state.camX,state.camY,state.camZ);camera.lookAt(state.lookX,state.lookY,state.lookZ);
+    renderer.clearDepth();
     renderer.render(scene,camera);
   }
   render();
@@ -634,16 +658,16 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
   var i18n={
     en:{navsvc:'Services',navwork:'Work',navrev:'Reviews',navbook:'Book',book:'Book Now',
       herotag:'St. Charles, MO · 5.0 Stars · 66 Reviews',claim:'The Art<em>of the Cut.</em>',
-      sub:'Expert grooming for kids, teens, and gentlemen in a welcoming bilingual environment. St. Charles\\'s top-rated barbershop — walk-ins always welcome.',
+      sub:'Expert grooming for kids, teens, and gentlemen in a welcoming bilingual environment. St. Charles\'s top-rated barbershop — walk-ins always welcome.',
       cta1:'Call to Book',cta2:'Book Online',
-      b2tag:'Meet The Crew',b2h:'Maria &amp;<em>Bryan.</em>',b2sub:'Two artists with different specialties. Tell them your idea, show them a reference, or just say "the usual." They\\'ll remember.',b2stat1:'Perfect Rating',b2stat2:'Days a Week',
+      b2tag:'Meet The Crew',b2h:'Maria &amp;<em>Bryan.</em>',b2sub:'Two artists with different specialties. Tell them your idea, show them a reference, or just say "the usual." They\'ll remember.',b2stat1:'Perfect Rating',b2stat2:'Days a Week',
       b3tag:'The Cut',b3h:'Sharp Lines.<em>Hot Towel Finish.</em>',b3sub:'Real chair, real conversation, real razor finish. Cuts take 25-40 minutes done properly. Straight razor finish on every fade.',
-      b4tag:'What We Do',b4h:'Six Ways to<em>Look Fresh.</em>',b4sub:'Classic cuts, kids\\' cuts, beard trims, fades, line-ups, full combos. All ages, all welcome. Hablamos español.',b4cta:'View Services',
+      b4tag:'What We Do',b4h:'Six Ways to<em>Look Fresh.</em>',b4sub:'Classic cuts, kids\' cuts, beard trims, fades, line-ups, full combos. All ages, all welcome. Hablamos español.',b4cta:'View Services',
       b5tag:'All Welcome',b5h:'Open Late.<em>Bilingual.</em>',b5sub:'Open Monday through Saturday 10-8, Sunday 10-4. Bilingual barbers — call in English or Spanish. Walk in or call ahead.',
       b6tag:'Ready to Book?',b6h:'Call Today.',b6cta1:'Call',b6cta2:'Book Online',
       eyebsvc:'What We Offer',titlesvc:'Our <em>Services</em>',
       svc1n:'Classic Haircut',svc1d:'Precision cuts tailored to your style. We listen, we execute, you leave looking sharp every single time.',
-      svc2n:'Kids\\' Cuts',svc2d:'Patient, fun service for kids of all ages. Even the squirmy ones.',
+      svc2n:'Kids\' Cuts',svc2d:'Patient, fun service for kids of all ages. Even the squirmy ones.',
       svc3n:'Beard Trim',svc3d:'Shape, define, clean up. Straight razor finish available.',
       svc4n:'Fade &amp; Taper',svc4d:'Clean fades from skin to any length. Done with precision.',
       svc5n:'Line-Up',svc5d:'Sharp edges, clean lines. Keep your style fresh between cuts.',
@@ -652,9 +676,9 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
       eyebrev:'What Clients Say',titlerev:'Real <em>Reviews.</em>',
       eyebfind:'Find Us',titlefind:'Hours &amp; <em>Location.</em>',day1:'Monday – Friday',day2:'Saturday',day3:'Sunday',eyebaddr:'Address',eyebphone:'Phone · Bilingual',
       eyebbook:'Book Online',titlebook:'Reserve Your <em>Chair.</em>',
-      bookp:'Tell us what you need and when. We\\'ll call to confirm. Prefer to talk? <a href="tel:3142990816">(314) 299-0816</a> rings straight through. Hablamos español.',
+      bookp:'Tell us what you need and when. We\'ll call to confirm. Prefer to talk? <a href="tel:3142990816">(314) 299-0816</a> rings straight through. Hablamos español.',
       formsend:'Send Request',
-      ctah:'Ready to Look<br>Your Best?',ctap:'Walk in or call ahead. La Barbería is open 7 days a week — we\\'ll make sure you leave looking and feeling great.',ctabtn:'Book Your Visit'
+      ctah:'Ready to Look<br>Your Best?',ctap:'Walk in or call ahead. La Barbería is open 7 days a week — we\'ll make sure you leave looking and feeling great.',ctabtn:'Book Your Visit'
     },
     es:{navsvc:'Servicios',navwork:'Cortes',navrev:'Reseñas',navbook:'Reservar',book:'Reservar',
       herotag:'St. Charles, MO · 5.0 Estrellas · 66 Reseñas',claim:'El Arte<em>del Corte.</em>',
@@ -685,7 +709,7 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
   function setLang(lang){toggle.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang)});document.documentElement.lang=lang;var map=i18n[lang];if(!map)return;document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.dataset.i18n;if(map[k]!==undefined)el.innerHTML=map[k]})}
   toggle.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;setLang(b.dataset.lang)});
 })();
-(function(){var form=document.getElementById('bookingForm');if(!form)return;form.addEventListener('submit',async function(e){e.preventDefault();var btn=form.querySelector('button[type=submit]');var inner=btn.querySelector('.magnetic-inner')||btn;var orig=inner.textContent;inner.textContent='Sending...';btn.disabled=true;try{await fetch('/',{method:'POST',body:new FormData(form)});alert('¡Got it! We\\'ll call within the hour.')}catch(err){inner.textContent=orig;btn.disabled=false;alert('Call (314) 299-0816.')}})})();
+(function(){var form=document.getElementById('bookingForm');if(!form)return;form.addEventListener('submit',async function(e){e.preventDefault();var btn=form.querySelector('button[type=submit]');var inner=btn.querySelector('.magnetic-inner')||btn;var orig=inner.textContent;inner.textContent='Sending...';btn.disabled=true;try{await fetch('/',{method:'POST',body:new FormData(form)});alert('¡Got it! We\'ll call within the hour.')}catch(err){inner.textContent=orig;btn.disabled=false;alert('Call (314) 299-0816.')}})})();
 </script>
 
 </body>
