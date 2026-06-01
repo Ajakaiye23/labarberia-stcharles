@@ -552,23 +552,23 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
   var chromeMat=new THREE.MeshStandardMaterial({color:0xE2E7ED,roughness:0.1,metalness:1.0,envMapIntensity:1.7});
   var redMat=new THREE.MeshStandardMaterial({color:0xC0392B,roughness:0.32,metalness:0.6,envMapIntensity:1.2,emissive:0x1a0503,emissiveIntensity:0.3});
   // One half-blade = polished tapered blade (box body + pointed cone tip) on a pivoting arm
-  function makeBlade(side){
+  // One half = a straight arm pivoting at the screw (origin): blade points UP,
+  // shank + finger-loop hang DOWN. Rotating each arm spreads BOTH the blade tips
+  // and the handle loops, so the two finger holes stay clearly separate.
+  function makeBlade(){
     var g=new THREE.Group();
-    var body=new THREE.Mesh(new THREE.BoxGeometry(0.34,4.4,0.07),chromeMat);body.position.y=2.2;body.castShadow=true;g.add(body);
-    var edge=new THREE.Mesh(new THREE.BoxGeometry(0.08,4.4,0.09),chromeMat);edge.position.set(side*0.16,2.2,0);g.add(edge);
-    var tip=new THREE.Mesh(new THREE.ConeGeometry(0.18,1.0,4),chromeMat);tip.position.y=4.9;tip.rotation.y=Math.PI/4;tip.castShadow=true;g.add(tip);
-    // shank down to handle
-    var shank=new THREE.Mesh(new THREE.BoxGeometry(0.26,1.6,0.12),chromeMat);shank.position.y=-0.6;g.add(shank);
-    // red ergonomic handle loop
-    var loop=new THREE.Mesh(new THREE.TorusGeometry(0.82,0.2,14,28),redMat);loop.position.set(side*0.7,-2.1,0);loop.rotation.y=side*0.5;loop.castShadow=true;g.add(loop);
+    var body=new THREE.Mesh(new THREE.BoxGeometry(0.36,4.6,0.09),chromeMat);body.position.y=2.5;body.castShadow=true;g.add(body);
+    var tip=new THREE.Mesh(new THREE.ConeGeometry(0.2,1.1,4),chromeMat);tip.position.y=5.3;tip.rotation.y=Math.PI/4;tip.castShadow=true;g.add(tip);
+    var shank=new THREE.Mesh(new THREE.BoxGeometry(0.26,2.0,0.12),chromeMat);shank.position.y=-1.5;g.add(shank);
+    var loop=new THREE.Mesh(new THREE.TorusGeometry(0.8,0.17,16,30),redMat);loop.position.y=-3.05;loop.castShadow=true;g.add(loop);
     return g;
   }
-  var bladeA=makeBlade(1);bladeA.position.set(0.12,0,0);scissorsGroup.add(bladeA);
-  var bladeB=makeBlade(-1);bladeB.position.set(-0.12,0,0);scissorsGroup.add(bladeB);
-  // Pivot screw
-  var pivot=new THREE.Mesh(new THREE.CylinderGeometry(0.26,0.26,0.5,20),chromeMat);pivot.rotation.x=Math.PI/2;pivot.position.set(0,0.3,0);pivot.castShadow=true;scissorsGroup.add(pivot);
-  var pivotHead=new THREE.Mesh(new THREE.CylinderGeometry(0.34,0.34,0.12,20),redMat);pivotHead.rotation.x=Math.PI/2;pivotHead.position.set(0,0.3,0.3);scissorsGroup.add(pivotHead);
-  scissorsGroup.position.set(5,-2.6,0);
+  var bladeA=makeBlade();bladeA.position.set(0,0,0.07);scissorsGroup.add(bladeA);
+  var bladeB=makeBlade();bladeB.position.set(0,0,-0.07);scissorsGroup.add(bladeB);
+  // Pivot screw at the crossing point (origin)
+  var pivot=new THREE.Mesh(new THREE.CylinderGeometry(0.22,0.22,0.46,24),chromeMat);pivot.rotation.x=Math.PI/2;pivot.position.set(0,0,0);pivot.castShadow=true;scissorsGroup.add(pivot);
+  var pivotHead=new THREE.Mesh(new THREE.CylinderGeometry(0.3,0.3,0.12,24),redMat);pivotHead.rotation.x=Math.PI/2;pivotHead.position.set(0,0,0.2);scissorsGroup.add(pivotHead);
+  scissorsGroup.position.set(4.5,-1.2,0);
   scene.add(scissorsGroup);
 
   // Floating particles
@@ -601,13 +601,13 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
     // Render bg first (full screen), then 3D on top
     renderer.autoClear=true;renderer.render(bgScene,bgCam);renderer.autoClear=false;
     scissorsGroup.visible=state.scissorsVis>0.05;
-    scissorsGroup.scale.setScalar(state.scissorsVis*1.25);
-    scissorsGroup.rotation.y=0.5+Math.sin(t*0.3)*0.5;
-    scissorsGroup.rotation.z=-0.42;
-    // Scissor "snip": open & close the two blades around the pivot screw
-    var snip=Math.abs(Math.sin(t*1.6))*0.2;
-    bladeA.rotation.z=-0.12-snip;
-    bladeB.rotation.z=0.12+snip;
+    scissorsGroup.scale.setScalar(state.scissorsVis*1.0);
+    scissorsGroup.rotation.y=0.3+Math.sin(t*0.3)*0.28;
+    scissorsGroup.rotation.z=-0.32;
+    // Scissor "snip": blades cross at the screw, handles stay clearly apart
+    var snip=Math.abs(Math.sin(t*1.6))*0.12;
+    bladeA.rotation.z=0.24+snip;
+    bladeB.rotation.z=-0.24-snip;
     var p=dgeo.attributes.position.array;
     for(var i=0;i<DUST;i++){p[i*3]+=dvel[i].x;p[i*3+1]+=dvel[i].y;p[i*3+2]+=dvel[i].z;if(p[i*3+1]>15)p[i*3+1]=-15;if(p[i*3]>20)p[i*3]=-20;if(p[i*3]<-20)p[i*3]=20}
     dgeo.attributes.position.needsUpdate=true;
