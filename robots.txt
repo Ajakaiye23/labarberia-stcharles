@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://labarberia-stl.netlify.app/sitemap.xml
+Sitemap: https://ajakaiye23.github.io/labarberia-stcharles/sitemap.xml

@@ -14,14 +14,14 @@
 <meta name="geo.placename" content="St. Charles, Missouri">
 <meta name="geo.position" content="38.785;-90.481">
 <meta name="ICBM" content="38.785, -90.481">
-<link rel="canonical" href="https://labarberia-stl.netlify.app/">
+<link rel="canonical" href="https://ajakaiye23.github.io/labarberia-stcharles/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="business.business">
 <meta property="og:site_name" content="La Barberia">
 <meta property="og:title" content="La Barberia | St. Charles, MO">
 <meta property="og:description" content="La Barberia - the art of the cut in St. Charles, MO. Precision fades, beard sculpting, and classic styling. Bilingual EN/ES. Book now - (314) 299-0816.">
-<meta property="og:url" content="https://labarberia-stl.netlify.app/">
+<meta property="og:url" content="https://ajakaiye23.github.io/labarberia-stcharles/">
 <meta property="og:image" content="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=630&q=80&auto=format&fit=crop">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -38,10 +38,10 @@
 {
   "@context": "https://schema.org",
   "@type": "HairSalon",
-  "@id": "https://labarberia-stl.netlify.app/#business",
+  "@id": "https://ajakaiye23.github.io/labarberia-stcharles/#business",
   "name": "La Barberia",
   "description": "La Barberia - the art of the cut in St. Charles, MO. Precision fades, beard sculpting, and classic styling. Bilingual EN/ES. Book now - (314) 299-0816.",
-  "url": "https://labarberia-stl.netlify.app/",
+  "url": "https://ajakaiye23.github.io/labarberia-stcharles/",
   "telephone": "+1-314-299-0816",
   "image": "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1200&h=630&q=80&auto=format&fit=crop",
   "priceRange": "$$",
@@ -247,10 +247,112 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#999;line-height:1}
 @keyframes popIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
 
+/* ===== PRELOADER ===== */
+.preloader{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center}
+.pre-cols{position:absolute;inset:0;display:flex}
+.pre-cols span{flex:1;background:var(--dark);transform-origin:top;transition:transform .75s cubic-bezier(.76,0,.24,1)}
+.pre-cols span:nth-child(2){transition-delay:.07s}
+.pre-cols span:nth-child(3){transition-delay:.14s}
+.pre-cols span:nth-child(4){transition-delay:.21s}
+.pre-cols span:nth-child(5){transition-delay:.28s}
+.preloader.done .pre-cols span{transform:scaleY(0)}
+.preloader.done{pointer-events:none}
+.pre-center{position:relative;z-index:2;text-align:center;transition:opacity .45s ease,transform .45s ease}
+.pre-word{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.6rem,5vw,3rem);letter-spacing:2px;text-transform:uppercase;color:var(--cream);display:flex;justify-content:center;overflow:hidden;padding-bottom:.15em}
+.pre-word b{font-weight:900;display:inline-block;transform:translateY(130%);opacity:0;animation:preUp .9s cubic-bezier(.22,1,.36,1) forwards}
+.pre-word b.gold{color:var(--red2);font-style:italic}
+@keyframes preUp{to{transform:translateY(0);opacity:1}}
+.pre-line{height:1px;background:rgba(231,76,60,.5);margin:1.4rem auto 0;width:0;animation:preLine 1.6s cubic-bezier(.22,1,.36,1) .3s forwards}
+@keyframes preLine{to{width:100%}}
+.pre-count{position:absolute;bottom:2.2rem;right:3rem;z-index:2;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.6rem,7vw,5rem);color:var(--red2);line-height:1;transition:opacity .45s ease,transform .45s ease;font-variant-numeric:tabular-nums}
+.preloader.done .pre-center,.preloader.done .pre-count{opacity:0;transform:translateY(-26px)}
+body.loading{overflow:hidden}
+body.preloading .beat-1 .beat-tag,body.preloading .beat-1 .beat-h1,body.preloading .beat-1 .beat-sub,body.preloading .beat-1 .beat-btns{opacity:0;transform:translateY(44px)}
+.beat-1 .beat-tag,.beat-1 .beat-h1,.beat-1 .beat-sub,.beat-1 .beat-btns{transition:opacity 1.1s cubic-bezier(.22,1,.36,1),transform 1.1s cubic-bezier(.22,1,.36,1)}
+.beat-1 .beat-h1{transition-delay:.1s}.beat-1 .beat-sub{transition-delay:.2s}.beat-1 .beat-btns{transition-delay:.3s}
+
+/* ===== FILM GRAIN ===== */
+.grain{position:fixed;inset:-50%;width:200%;height:200%;z-index:150;pointer-events:none;opacity:.04;background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/></filter><rect width="300" height="300" filter="url(%23n)" opacity="0.7"/></svg>');animation:grainShift 1.2s steps(6) infinite}
+@keyframes grainShift{0%{transform:translate(0,0)}16%{transform:translate(-2%,1%)}33%{transform:translate(1%,-2%)}50%{transform:translate(-1%,2%)}66%{transform:translate(2%,1%)}83%{transform:translate(-2%,-1%)}100%{transform:translate(0,0)}}
+
+/* ===== MOBILE MENU ===== */
+.nav-burger{display:none;background:none;border:none;cursor:pointer;width:42px;height:42px;position:relative;padding:0}
+.nav-burger span{position:absolute;left:9px;right:9px;height:1.5px;background:var(--red2);transition:transform .35s cubic-bezier(.22,1,.36,1),top .35s cubic-bezier(.22,1,.36,1)}
+.nav-burger span:first-child{top:16px}
+.nav-burger span:last-child{top:25px}
+.nav-burger.open span:first-child{top:20.5px;transform:rotate(45deg)}
+.nav-burger.open span:last-child{top:20.5px;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;inset:0;background:rgba(26,18,9,.985);z-index:99;display:flex;flex-direction:column;justify-content:center;gap:.4rem;padding:0 2rem;visibility:hidden;opacity:0;transition:opacity .45s ease,visibility 0s linear .45s}
+.mobile-menu.open{visibility:visible;opacity:1;transition:opacity .45s ease}
+.mobile-menu a{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(1.8rem,8vw,2.6rem);letter-spacing:1px;text-transform:uppercase;color:var(--cream);text-decoration:none;padding:.55rem 0;border-bottom:1px solid rgba(231,76,60,.2);transform:translateY(30px);opacity:0;transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .55s ease}
+.mobile-menu.open a{transform:translateY(0);opacity:1}
+.mobile-menu.open a:nth-child(1){transition-delay:.08s}
+.mobile-menu.open a:nth-child(2){transition-delay:.14s}
+.mobile-menu.open a:nth-child(3){transition-delay:.2s}
+.mobile-menu.open a:nth-child(4){transition-delay:.26s}
+.mobile-menu.open a:nth-child(5){transition-delay:.32s}
+.mobile-menu a em{color:var(--red2)}
+.mm-phone{font-size:1.2rem!important;letter-spacing:2px!important;color:var(--red2)!important;border-bottom:none!important;margin-top:1.2rem;font-family:'DM Sans',sans-serif!important}
+.mm-lang{display:flex;gap:.6rem;margin-top:1.6rem;opacity:0;transform:translateY(30px);transition:transform .55s cubic-bezier(.22,1,.36,1) .38s,opacity .55s ease .38s}
+.mobile-menu.open .mm-lang{opacity:1;transform:translateY(0)}
+.mm-lang button{background:transparent;border:1px solid rgba(231,76,60,.4);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.85rem;letter-spacing:2px;padding:10px 22px;cursor:pointer;transition:all .2s}
+.mm-lang button.active{background:var(--red);border-color:var(--red);color:#fff}
+
+/* ===== GRAND FOOTER ===== */
+.footer-grand{background:var(--dark);padding:5.5rem 3rem 2rem;overflow:hidden}
+.fg-inner{max-width:1300px;margin:0 auto}
+.fg-word{font-family:'Playfair Display',serif;font-weight:900;font-style:italic;font-size:clamp(3.4rem,12vw,11rem);line-height:.95;color:transparent;-webkit-text-stroke:1px rgba(231,76,60,.4);letter-spacing:1px;user-select:none;margin-bottom:4rem;white-space:nowrap}
+.fg-cols{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:3rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(245,239,224,.12)}
+.fg-tag{font-size:.88rem;color:rgba(245,239,224,.55);line-height:1.9;max-width:300px}
+.fg-label{font-family:'Playfair Display',serif;font-size:.78rem;letter-spacing:3px;color:var(--red2);text-transform:uppercase;font-weight:700;margin-bottom:1.3rem}
+.fg-col a,.fg-item{display:block;font-size:.85rem;color:rgba(245,239,224,.55);text-decoration:none;margin-bottom:.7rem;transition:color .2s;line-height:1.6}
+.fg-col a{width:fit-content}
+.fg-col a:hover{color:var(--red2)}
+.fg-bottom{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:2rem;font-size:.68rem;letter-spacing:1px;color:rgba(245,239,224,.4)}
+.fg-bottom a{color:var(--red2);text-decoration:none}
+
+/* ===== V2: MOTION & TYPE ===== */
+nav{transition:transform .5s cubic-bezier(.22,1,.36,1),background .3s}
+nav.nav-hidden{transform:translateY(-100%)}
+.nav-links a{position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-5px;height:1px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+h2.title{font-size:clamp(2.8rem,6vw,5.8rem)}
+.marquee{will-change:transform}
+.fg-word{transition:color .6s ease}
+.fg-word:hover{color:rgba(231,76,60,.22)}
+.fg-bottom #fgTime{letter-spacing:2px;text-transform:uppercase;font-size:.62rem}
+
+/* ===== A11Y + POLISH ===== */
+.form-error{color:var(--red);font-size:.85rem;margin-top:.9rem;display:none;line-height:1.7;font-weight:500}
+.form-error a{color:var(--red);font-weight:700}
+.form-status{display:none;border:1px solid var(--red);padding:2.5rem;text-align:center}
+.form-status.show{display:block;animation:popIn .4s ease}
+.form-status h4{font-family:'Playfair Display',serif;color:var(--red);font-size:1.3rem;letter-spacing:1px;margin-bottom:.8rem}
+.form-status p{font-size:.88rem;color:var(--brown);line-height:1.8}
+::selection{background:var(--red);color:#fff}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.skip-link{position:fixed;top:-100px;left:1rem;z-index:10001;background:var(--red);color:#fff;padding:.7rem 1.2rem;font-weight:700;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:top .25s}
+.skip-link:focus{top:1rem}
+html{scrollbar-width:thin;scrollbar-color:var(--red) var(--cream)}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--red)}
+@media(prefers-reduced-motion:reduce){
+  .grain{animation:none}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}
+}
+
 @media(max-width:900px){
+  .nav-burger{display:block}
+  .fg-cols{grid-template-columns:1fr;gap:2.4rem}
+  .fg-word{font-size:clamp(2.6rem,14vw,5rem);margin-bottom:2.5rem}
+  .footer-grand{padding:3.5rem 1.5rem 1.5rem}
+  .pre-count{right:1.5rem;bottom:1.5rem}
   nav{padding:0 1.2rem;height:60px}.nav-links,.lang-toggle{display:none}
   .story{height:auto}.story-pin{position:relative;height:auto;display:block;padding:5rem 0}
-  #storyCanvas{position:relative;width:100%;height:60vh;display:block}
+  #storyCanvas{display:none}
+  .story-vignette{display:none}
   .beat{position:relative;opacity:1;transform:none;padding:3rem 1.5rem;pointer-events:auto;justify-content:flex-start}
   .beat-inner{text-align:left!important;margin-left:0!important}.beat-rail{display:none}
   .section,.reviews-section,.hours-section,.cta-section,.portfolio-section,.booking-section{padding:5rem 1.5rem}
@@ -264,6 +366,20 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
 </style>
 </head>
 <body>
+<script>document.body.classList.add('preloading','loading');</script>
+<a href="#services" class="skip-link">Skip to content</a>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pre-cols"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="pre-center">
+    <div class="pre-word" id="preWord"></div>
+    <div class="pre-line"></div>
+  </div>
+  <div class="pre-count" id="preCount">0</div>
+</div>
+<noscript><style>.preloader{display:none}</style></noscript>
+
+<div class="grain" aria-hidden="true"></div>
 <div class="scroll-bar" id="scrollBar"></div>
 
 <nav>
@@ -280,8 +396,21 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
       <button data-lang="es">ES</button>
     </div>
     <a href="tel:3142990816" class="nav-cta magnetic" data-i18n="book" onclick="if(window.innerWidth>768){event.preventDefault();openBookModal()}">Book Now</a>
+    <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" data-i18n="navsvc">Services</a>
+  <a href="#portfolio" data-i18n="navwork">Work</a>
+  <a href="#reviews" data-i18n="navrev">Reviews</a>
+  <a href="#booking" data-i18n="navbook">Book</a>
+  <a href="tel:3142990816" class="mm-phone">(314) 299-0816</a>
+  <div class="mm-lang" id="mmLang">
+    <button data-lang="en" class="active">EN</button>
+    <button data-lang="es">ES</button>
+  </div>
+</div>
 
 <section class="story">
   <div class="story-pin">
@@ -440,9 +569,9 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
       <p data-i18n="bookp">Tell us what you need and when. We'll call to confirm. Prefer to talk? <a href="tel:3142990816">(314) 299-0816</a> rings straight through. Hablamos español.</p>
     </div>
     <div>
-      <form id="bookingForm" name="booking" data-netlify="true" data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="booking"/>
-        <div style="display:none"><input name="bot-field"/></div>
+      <form id="bookingForm" name="booking">
+        <input type="hidden" name="_subject" value="New booking — La Barberia"/><input type="hidden" name="_template" value="table"/><input type="hidden" name="_captcha" value="false"/>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <div class="form-row">
           <div class="form-group"><label for="bName">Name / Nombre</label><input type="text" id="bName" name="name" required placeholder="Your name"/></div>
           <div class="form-group"><label for="bPhone">Phone / Teléfono</label><input type="tel" id="bPhone" name="phone" required placeholder="(314) 000-0000"/></div>
@@ -454,7 +583,12 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
         <div class="form-group"><label for="bDate">Preferred Date</label><input type="date" id="bDate" name="date"/></div>
         <div class="form-group"><label for="bNotes">Notes</label><textarea id="bNotes" name="notes" rows="3" placeholder="Anything we should know..."></textarea></div>
         <button type="submit" class="btn-red magnetic" style="width:100%;padding:16px;font-size:.85rem;letter-spacing:2px"><span class="magnetic-inner" data-i18n="formsend">Send Request</span></button>
+        <div class="form-error" id="formError" role="alert" data-i18n="formerr">Something went wrong — please call <a href="tel:3142990816">(314) 299-0816</a> instead.</div>
       </form>
+      <div class="form-status" id="formStatus" role="status">
+        <h4 data-i18n="formokh">¡Listo! Request Received</h4>
+        <p data-i18n="formokp">We'll call within the hour to confirm. Talk soon — hablamos pronto.</p>
+      </div>
     </div>
   </div>
 </div>
@@ -466,18 +600,48 @@ footer{background:var(--dark);padding:2.5rem 3rem;display:flex;justify-content:s
   <a href="tel:3142990816" class="btn-white magnetic" onclick="if(window.innerWidth>768){event.preventDefault();openBookModal()}"><span class="magnetic-inner" data-i18n="ctabtn">Book Your Visit</span></a>
 </div>
 
-<footer>
-  <div class="footer-logo">La <span>Barbería</span> · St. Charles, MO</div>
-  <div class="footer-copy">© 2026 La Barbería · 327 Droste Rd, St. Charles, MO 63301</div>
+<footer class="footer-grand">
+  <div class="fg-inner">
+    <div class="fg-word" aria-hidden="true">Barbería</div>
+    <div class="fg-cols">
+      <div>
+        <div class="fg-label">La Barbería</div>
+        <p class="fg-tag" data-i18n="fgtag">Bilingual barbershop in St. Charles, MO. Expert cuts for kids, teens, and gentlemen — walk-ins always welcome. Hablamos español.</p>
+      </div>
+      <div class="fg-col">
+        <div class="fg-label" data-i18n="fgexp">Explore</div>
+        <a href="#services" data-i18n="navsvc">Services</a>
+        <a href="#portfolio" data-i18n="navwork">Work</a>
+        <a href="#reviews" data-i18n="navrev">Reviews</a>
+        <a href="#booking" data-i18n="navbook">Book</a>
+      </div>
+      <div class="fg-col">
+        <div class="fg-label" data-i18n="fgvisit">Visit</div>
+        <div class="fg-item">327 Droste Rd<br>St. Charles, MO 63301</div>
+        <a href="tel:3142990816">(314) 299-0816</a>
+      </div>
+      <div class="fg-col">
+        <div class="fg-label" data-i18n="fghours">Hours</div>
+        <div class="fg-item" data-i18n="fgh1">Mon – Sat · 10am – 8pm</div>
+        <div class="fg-item" data-i18n="fgh2">Sunday · 10am – 4pm</div>
+      </div>
+    </div>
+    <div class="fg-bottom">
+      <div>© 2026 La Barbería. All rights reserved.</div>
+      <div id="fgTime"></div>
+      <div>Site by <a href="mailto:blkg21@gmail.com">Ayokunlemi Ajakaiye</a></div>
+    </div>
+  </div>
 </footer>
 
 <div class="modal-overlay" id="bookModal"><div class="modal-box"><button class="modal-close" onclick="closeModal()">&times;</button><h3>La Barbería</h3><p>Walk in or give us a call.</p><a href="tel:3142990816" class="modal-phone">(314) 299-0816</a><div class="modal-addr">327 Droste Rd, St. Charles, MO 63301</div><div class="modal-btns"><a href="tel:3142990816" class="modal-btn-call">Call Now</a><a href="https://maps.google.com/?q=327+Droste+Rd+St+Charles+MO" target="_blank" class="modal-btn-map">Get Directions</a></div></div></div>
 <script>function openBookModal(){document.getElementById('bookModal').classList.add('active')}function closeModal(){document.getElementById('bookModal').classList.remove('active')}document.getElementById('bookModal').addEventListener('click',function(e){if(e.target===this)closeModal()});</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.134.0/examples/js/objects/Reflector.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
 <script>(function(){var bar=document.getElementById('scrollBar');function upd(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.width=(m>0?(window.scrollY/m)*100:0)+'%'}window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd,{passive:true});upd()})();</script>
 
@@ -571,15 +735,35 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
   scissorsGroup.position.set(4.5,-1.2,0);
   scene.add(scissorsGroup);
 
+  // MIRROR FLOOR — polished barbershop checker vibe via dark planar reflection
+  if(THREE.Reflector){
+    var mirror=new THREE.Reflector(new THREE.PlaneGeometry(90,60),{
+      clipBias:0.003,
+      textureWidth:1024,
+      textureHeight:1024,
+      color:0x1c0f0a
+    });
+    mirror.rotation.x=-Math.PI/2;
+    mirror.position.y=-7;
+    scene.add(mirror);
+  }
+
   // Floating particles
   var DUST=140;var dpos=new Float32Array(DUST*3);var dvel=[];
   for(var i=0;i<DUST;i++){dpos[i*3]=(Math.random()-.5)*40;dpos[i*3+1]=(Math.random()-.5)*30;dpos[i*3+2]=(Math.random()-.5)*20;dvel.push({x:(Math.random()-.5)*.02,y:.01+Math.random()*.014,z:(Math.random()-.5)*.012})}
   var dgeo=new THREE.BufferGeometry();dgeo.setAttribute('position',new THREE.BufferAttribute(dpos,3));
-  scene.add(new THREE.Points(dgeo,new THREE.PointsMaterial({color:0xE74C3C,size:0.5,transparent:true,opacity:0.45,sizeAttenuation:true})));
+  var softDot=(function(){
+    var c=document.createElement('canvas');c.width=c.height=64;var g=c.getContext('2d');
+    var grd=g.createRadialGradient(32,32,0,32,32,32);
+    grd.addColorStop(0,'rgba(255,255,255,1)');grd.addColorStop(0.35,'rgba(255,255,255,.55)');grd.addColorStop(1,'rgba(255,255,255,0)');
+    g.fillStyle=grd;g.fillRect(0,0,64,64);
+    return new THREE.CanvasTexture(c);
+  })();
+  scene.add(new THREE.Points(dgeo,new THREE.PointsMaterial({map:softDot,color:0xE74C3C,size:1.0,transparent:true,opacity:0.7,sizeAttenuation:true,depthWrite:false,blending:THREE.AdditiveBlending})));
 
   var state={camX:0,camY:2,camZ:18,lookX:0,lookY:0,lookZ:0,scissorsVis:1};
 
-  var tl=gsap.timeline({defaults:{ease:'power3.inOut'},scrollTrigger:{trigger:'.story',start:'top top',end:'bottom bottom',scrub:1.2,pin:'.story-pin',anticipatePin:1,fastScrollEnd:true,
+  var tl=gsap.timeline({defaults:{ease:'power3.inOut'},scrollTrigger:{trigger:'.story',start:'top top',end:'bottom bottom',scrub:0.6,pin:'.story-pin',anticipatePin:1,fastScrollEnd:true,
     onUpdate:function(self){var idx=Math.min(5,Math.floor(self.progress*6));document.querySelectorAll('.beat').forEach(function(b,i){b.classList.toggle('in',i===idx)});document.querySelectorAll('.brail-dot').forEach(function(d,i){d.classList.toggle('active',i===idx)})}}});
 
   tl.to(state,{camX:-3,camY:3,camZ:20,lookX:-1,duration:1.3},0)
@@ -588,6 +772,13 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
     .to(state,{camX:-4,camY:3,camZ:16,lookX:0,lookY:0,duration:1.5},'>-0.2')
     .to(state,{camX:5,camY:1,camZ:14,lookX:0,lookY:1,duration:1.5},'>-0.2')
     .to(state,{camX:0,camY:3,camZ:22,lookX:0,lookY:0,duration:1.5},'>-0.3');
+
+  // Mouse parallax (lerped)
+  var pmx=0,pmy=0,ptx=0,pty=0;
+  window.addEventListener('mousemove',function(e){
+    ptx=(e.clientX/window.innerWidth-0.5)*2;
+    pty=(e.clientY/window.innerHeight-0.5)*2;
+  },{passive:true});
 
   var clock=new THREE.Clock();var heroVisible=true;
   if('IntersectionObserver' in window){new IntersectionObserver(function(e){heroVisible=e[0].isIntersecting},{threshold:0.01}).observe(canvas)}
@@ -611,7 +802,8 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
     var p=dgeo.attributes.position.array;
     for(var i=0;i<DUST;i++){p[i*3]+=dvel[i].x;p[i*3+1]+=dvel[i].y;p[i*3+2]+=dvel[i].z;if(p[i*3+1]>15)p[i*3+1]=-15;if(p[i*3]>20)p[i*3]=-20;if(p[i*3]<-20)p[i*3]=20}
     dgeo.attributes.position.needsUpdate=true;
-    camera.position.set(state.camX,state.camY,state.camZ);camera.lookAt(state.lookX,state.lookY,state.lookZ);
+    pmx+=(ptx-pmx)*0.04;pmy+=(pty-pmy)*0.04;
+    camera.position.set(state.camX+pmx*1.0,state.camY-pmy*0.6,state.camZ);camera.lookAt(state.lookX,state.lookY,state.lookZ);
     renderer.clearDepth();
     renderer.render(scene,camera);
   }
@@ -678,6 +870,10 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
       eyebbook:'Book Online',titlebook:'Reserve Your <em>Chair.</em>',
       bookp:'Tell us what you need and when. We\'ll call to confirm. Prefer to talk? <a href="tel:3142990816">(314) 299-0816</a> rings straight through. Hablamos español.',
       formsend:'Send Request',
+      formerr:'Something went wrong — please call <a href="tel:3142990816">(314) 299-0816</a> instead.',
+      formokh:'¡Listo! Request Received',formokp:'We\'ll call within the hour to confirm. Talk soon — hablamos pronto.',
+      fgtag:'Bilingual barbershop in St. Charles, MO. Expert cuts for kids, teens, and gentlemen — walk-ins always welcome. Hablamos español.',
+      fgexp:'Explore',fgvisit:'Visit',fghours:'Hours',fgh1:'Mon – Sat · 10am – 8pm',fgh2:'Sunday · 10am – 4pm',
       ctah:'Ready to Look<br>Your Best?',ctap:'Walk in or call ahead. La Barbería is open 7 days a week — we\'ll make sure you leave looking and feeling great.',ctabtn:'Book Your Visit'
     },
     es:{navsvc:'Servicios',navwork:'Cortes',navrev:'Reseñas',navbook:'Reservar',book:'Reservar',
@@ -702,14 +898,118 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
       eyebbook:'Reserva Online',titlebook:'Reserva Tu <em>Silla.</em>',
       bookp:'Dinos lo que necesitas y cuándo. Te llamamos para confirmar. ¿Prefieres hablar? <a href="tel:3142990816">(314) 299-0816</a> contesta directamente. Hablamos español.',
       formsend:'Enviar Solicitud',
+      formerr:'Algo salió mal — por favor llama al <a href="tel:3142990816">(314) 299-0816</a>.',
+      formokh:'¡Listo! Solicitud Recibida',formokp:'Te llamamos dentro de una hora para confirmar. Hablamos pronto.',
+      fgtag:'Barbería bilingüe en St. Charles, MO. Cortes expertos para niños, jóvenes y caballeros — sin cita previa. Hablamos español.',
+      fgexp:'Explora',fgvisit:'Visítanos',fghours:'Horario',fgh1:'Lun – Sáb · 10am – 8pm',fgh2:'Domingo · 10am – 4pm',
       ctah:'¿Listo para Lucir<br>Tu Mejor Estilo?',ctap:'Pasa o llama antes. La Barbería abre los 7 días — nos aseguraremos de que salgas luciendo increíble.',ctabtn:'Reserva Tu Visita'
     }
   };
-  var toggle=document.getElementById('langToggle');if(!toggle)return;
-  function setLang(lang){toggle.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang)});document.documentElement.lang=lang;var map=i18n[lang];if(!map)return;document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.dataset.i18n;if(map[k]!==undefined)el.innerHTML=map[k]})}
-  toggle.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;setLang(b.dataset.lang)});
+  function setLang(lang){document.querySelectorAll('.lang-toggle button,.mm-lang button').forEach(function(b){b.classList.toggle('active',b.dataset.lang===lang)});document.documentElement.lang=lang;var map=i18n[lang];if(!map)return;document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.dataset.i18n;if(map[k]!==undefined)el.innerHTML=map[k]})}
+  document.querySelectorAll('#langToggle,#mmLang').forEach(function(toggle){
+    toggle.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;setLang(b.dataset.lang)});
+  });
 })();
-(function(){var form=document.getElementById('bookingForm');if(!form)return;form.addEventListener('submit',async function(e){e.preventDefault();var btn=form.querySelector('button[type=submit]');var inner=btn.querySelector('.magnetic-inner')||btn;var orig=inner.textContent;inner.textContent='Sending...';btn.disabled=true;try{await fetch('/',{method:'POST',body:new FormData(form)});alert('¡Got it! We\'ll call within the hour.')}catch(err){inner.textContent=orig;btn.disabled=false;alert('Call (314) 299-0816.')}})})();
+(function(){var form=document.getElementById('bookingForm');if(!form)return;form.addEventListener('submit',async function(e){e.preventDefault();var btn=form.querySelector('button[type=submit]');var inner=btn.querySelector('.magnetic-inner')||btn;var orig=inner.textContent;inner.textContent='...';btn.disabled=true;var errEl=document.getElementById('formError');try{var res=await fetch('https://formsubmit.co/ajax/blkg21@gmail.com',{method:'POST',body:new FormData(form)});if(!res.ok)throw new Error('submit failed');form.style.display='none';var st=document.getElementById('formStatus');if(st)st.classList.add('show')}catch(err){inner.textContent=orig;btn.disabled=false;if(errEl)errEl.style.display='block'}})})();
+</script>
+
+<!-- Preloader + mobile menu + a11y -->
+<script>
+(function(){
+  var pre=document.getElementById('preloader');
+  var done=false;
+  function finish(){
+    if(done)return;done=true;
+    if(pre)pre.classList.add('done');
+    document.body.classList.remove('loading');
+    setTimeout(function(){document.body.classList.remove('preloading')},60);
+    setTimeout(function(){if(pre&&pre.parentNode)pre.parentNode.removeChild(pre)},1300);
+  }
+  if(pre){
+    var word=document.getElementById('preWord');
+    if(word){
+      'LA BARBERÍA'.split('').forEach(function(ch,i){
+        var b=document.createElement('b');
+        if(ch===' '){b.innerHTML='&nbsp;'}else{b.textContent=ch;if(i>=3)b.className='gold'}
+        b.style.animationDelay=(0.12+i*0.05)+'s';
+        word.appendChild(b);
+      });
+    }
+    if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){finish()}
+    else{
+      var count=document.getElementById('preCount'),start=null,DUR=1700;
+      function step(ts){
+        if(!start)start=ts;
+        var p=Math.min(1,(ts-start)/DUR),e=1-Math.pow(1-p,3);
+        if(count)count.textContent=Math.round(e*100);
+        if(p<1)requestAnimationFrame(step);else setTimeout(finish,300);
+      }
+      requestAnimationFrame(step);
+      setTimeout(finish,4500);
+    }
+  }else{finish()}
+
+  var burger=document.getElementById('navBurger'),menu=document.getElementById('mobileMenu');
+  if(burger&&menu){
+    function setMenu(open){
+      burger.classList.toggle('open',open);
+      menu.classList.toggle('open',open);
+      burger.setAttribute('aria-expanded',open?'true':'false');
+      burger.setAttribute('aria-label',open?'Close menu':'Open menu');
+      document.body.style.overflow=open?'hidden':'';
+      if(window.__lenis){open?window.__lenis.stop():window.__lenis.start()}
+    }
+    burger.addEventListener('click',function(){setMenu(!menu.classList.contains('open'))});
+    menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setMenu(false)})});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open'))setMenu(false)});
+  }
+
+  var sc=document.getElementById('storyCanvas');
+  if(sc)sc.setAttribute('aria-hidden','true');
+})();
+</script>
+
+<!-- V2: scroll choreography -->
+<script>
+(function(){
+  var RM=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  var nav=document.querySelector('nav'),lastY=window.scrollY||0;
+  if(nav){
+    window.addEventListener('scroll',function(){
+      var y=window.scrollY||0;
+      var menu=document.getElementById('mobileMenu');
+      if(!(menu&&menu.classList.contains('open'))){
+        if(y>lastY&&y>320){nav.classList.add('nav-hidden')}else{nav.classList.remove('nav-hidden')}
+      }
+      lastY=y;
+    },{passive:true});
+  }
+
+  var mq=document.querySelector('.marquee');
+  if(mq&&!RM){
+    var cur=0,prev=window.scrollY||0;
+    (function frame(){
+      var y=window.scrollY||0,v=y-prev;prev=y;
+      var t=Math.max(-8,Math.min(8,v*0.35));
+      cur+=(t-cur)*0.1;
+      mq.style.transform='skewX('+cur.toFixed(2)+'deg)';
+      requestAnimationFrame(frame);
+    })();
+  }
+
+  if(window.gsap&&window.ScrollTrigger&&!RM&&window.innerWidth>900){
+    gsap.utils.toArray('h2.title').forEach(function(t){
+      gsap.fromTo(t,{y:36},{y:-16,ease:'none',scrollTrigger:{trigger:t,start:'top 100%',end:'bottom 0%',scrub:0.5}});
+    });
+  }
+
+  var ft=document.getElementById('fgTime');
+  if(ft){
+    function tick(){try{ft.textContent='St. Charles, MO · '+new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/Chicago'})}catch(e){}}
+    tick();setInterval(tick,30000);
+  }
+})();
 </script>
 
 </body>
