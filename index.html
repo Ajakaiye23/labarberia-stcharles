@@ -312,8 +312,8 @@ body.preloading .beat-1 .beat-tag,body.preloading .beat-1 .beat-h1,body.preloadi
 .fg-bottom a{color:var(--red2);text-decoration:none}
 
 /* ===== V2: MOTION & TYPE ===== */
-nav{transition:transform .5s cubic-bezier(.22,1,.36,1),background .3s}
-nav.nav-hidden{transform:translateY(-100%)}
+nav{transition:transform .5s cubic-bezier(.22,1,.36,1),background .3s;top:14px;left:clamp(12px,3vw,34px);right:clamp(12px,3vw,34px);height:62px;border-radius:100px;border:1px solid rgba(231,76,60,.3);background:rgba(26,18,9,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 12px 40px rgba(0,0,0,.4);padding:0 1.4rem 0 1.8rem}
+nav.nav-hidden{transform:translateY(calc(-100% - 20px))}
 .nav-links a{position:relative}
 .nav-links a::after{content:'';position:absolute;left:0;bottom:-5px;height:1px;width:100%;background:var(--red);transform:scaleX(0);transform-origin:right;transition:transform .35s cubic-bezier(.22,1,.36,1)}
 .nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
@@ -734,6 +734,19 @@ float vig=smoothstep(1.2,0.3,length(uv-0.5)*1.6);col*=vig;gl_FragColor=vec4(col,
   var pivotHead=new THREE.Mesh(new THREE.CylinderGeometry(0.3,0.3,0.12,24),redMat);pivotHead.rotation.x=Math.PI/2;pivotHead.position.set(0,0,0.2);scissorsGroup.add(pivotHead);
   scissorsGroup.position.set(4.5,-1.2,0);
   scene.add(scissorsGroup);
+
+  // Warm red glow halo behind the scissors (peachweb-style backlight)
+  var haloTex=(function(){
+    var c=document.createElement('canvas');c.width=c.height=256;var g=c.getContext('2d');
+    var gr=g.createRadialGradient(128,128,0,128,128,128);
+    gr.addColorStop(0,'rgba(255,150,120,0.8)');gr.addColorStop(0.4,'rgba(231,76,60,0.28)');gr.addColorStop(1,'rgba(231,76,60,0)');
+    g.fillStyle=gr;g.fillRect(0,0,256,256);
+    return new THREE.CanvasTexture(c);
+  })();
+  var halo=new THREE.Sprite(new THREE.SpriteMaterial({map:haloTex,transparent:true,opacity:0.75,blending:THREE.AdditiveBlending,depthWrite:false}));
+  halo.scale.set(22,22,1);
+  halo.position.set(4.5,-0.5,-7);
+  scene.add(halo);
 
   // MIRROR FLOOR — polished barbershop checker vibe via dark planar reflection
   if(THREE.Reflector){
