@@ -24,49 +24,81 @@ export function scissors(THREE, ctx) {
   const {mat, h} = ctx;
   const g = new THREE.Group();
 
+  /* Barber shears. Both halves are near-identical forgings crossed at the
+     pivot, exactly as the real thing: authored along +X with the pivot at the
+     origin, then splayed by rotating each half about that pivot. The bow rings
+     therefore separate because the halves are open, not because they were
+     nudged apart.
+
+     The rings are TorusGeometry left in its native XY plane, which is the same
+     plane the blades are extruded in — rotating them onto XZ turns the pair
+     into a stack of coils seen edge-on instead of two finger holes. */
+
+  const OPEN = 0.22;          // half-angle of the opening, radians
+  const RING_X = -3.05;       // bow centre, back along the shank
+  const RING_R = 0.56;
+
   function half(flip) {
     const s = new THREE.Group();
-    // blade outline: tapering to a point
-    const blade = h.extrude(
-      [[0,-0.10],[3.1,-0.02],[3.35,0.03],[3.1,0.10],[0,0.26]],
-      mat.chrome, {depth: 0.11, bevel: 0.022}
-    );
-    blade.position.set(1.55, 0.05, 0);
+
+    // Blade: straight cutting edge on top, ground spine below, tapering to a
+    // point. Authored in pivot space, so center:false to keep that origin.
+    const blade = h.extrude([
+      [-0.40, -0.30], [0.65, -0.25], [1.75, -0.175], [2.55, -0.085],
+      [3.02, 0.005],
+      [2.55, 0.06], [1.5, 0.115], [0.5, 0.16], [-0.40, 0.20]
+    ], mat.chrome, {depth: 0.10, bevel: 0.016, center: false});
+    blade.position.z = -0.05;
     s.add(blade);
 
-    // shank running back from the pivot
-    const shank = h.extrude(
-      [[0,-0.09],[-1.5,-0.16],[-1.9,-0.10],[-1.9,0.10],[-1.5,0.17],[0,0.11]],
-      mat.chrome, {depth: 0.10, bevel: 0.018}
-    );
-    shank.position.set(-0.95, 0, 0);
+    // Shank: narrows from the pivot boss and sweeps back to meet the bow.
+    const shank = h.extrude([
+      [-0.30, -0.26], [-1.30, -0.235], [-2.25, -0.20], [-2.95, -0.17],
+      [-2.95, 0.17], [-2.25, 0.175], [-1.30, 0.15], [-0.30, 0.18]
+    ], mat.chrome, {depth: 0.095, bevel: 0.015, center: false});
+    shank.position.z = -0.0475;
     s.add(shank);
 
-    // bow handle — a lathed torus reads as a forged ring
-    const bow = h.tor(0.46, 0.085, mat.chrome, 48);
-    bow.position.set(-2.45, flip ? -0.28 : 0.28, 0);
-    bow.rotation.set(Math.PI / 2, 0, flip ? -0.22 : 0.22);
-    bow.scale.set(1, 1.25, 1);
+    // Bow: an oval ring in the blade's own plane, so you look through it.
+    const bow = h.tor(RING_R, 0.105, mat.chrome, 56);
+    bow.position.set(RING_X, 0, 0);
+    bow.scale.set(1, 1.16, 1);
     s.add(bow);
 
-    if (flip) { s.rotation.z = -0.13; s.position.y = -0.06; }
-    else { s.rotation.z = 0.13; s.position.y = 0.06; }
+    // Finger tang — the little hooked rest under the lower bow. Only one half
+    // carries it on a real pair of shears, and its absence on the other is
+    // what tells you which hand they were forged for.
+    if (flip) {
+      const tang = h.cyl(0.065, 0.055, 0.62, mat.chrome, 20);
+      tang.position.set(RING_X + 0.30, -0.72, 0);
+      tang.rotation.z = -0.75;
+      s.add(tang);
+      const ball = h.sph(0.085, mat.chrome, 20);
+      ball.position.set(RING_X + 0.58, -0.98, 0);
+      s.add(ball);
+    }
+
+    s.rotation.z = flip ? -OPEN : OPEN;
     return s;
   }
 
   const a = half(false), b = half(true);
-  b.position.z = -0.14;
+  a.position.z = 0.075;       // the two forgings sit face to face at the joint
+  b.position.z = -0.075;
   g.add(a, b);
 
-  // pivot screw
-  const pivot = h.cyl(0.15, 0.15, 0.42, mat.brass, 28);
-  pivot.rotation.x = Math.PI / 2;
-  g.add(pivot);
+  // Pivot: a brass screw with a raised boss, long enough to pass through both.
+  const boss = h.cyl(0.26, 0.26, 0.30, mat.brass, 32);
+  boss.rotation.x = Math.PI / 2;
+  g.add(boss);
+  const screw = h.cyl(0.145, 0.145, 0.44, mat.brass, 24);
+  screw.rotation.x = Math.PI / 2;
+  g.add(screw);
+  const head = h.cyl(0.20, 0.20, 0.05, mat.brass, 24);
+  head.rotation.x = Math.PI / 2;
+  head.position.z = 0.235;
+  g.add(head);
 
   g.userData.blades = [a, b];
   return g;
 }
-
-/* ---------------------------------------------------------------- PIPE WRENCH
-   M & S Plumbing. Serrated jaws + a knurled adjusting nut; the tooth strip is
-   what makes it a *pipe* wrench rather than a generic spanner. */
